@@ -88,6 +88,10 @@
       &-actions {
         margin: 0 -1.75rem;
 
+        @media (max-width: 991px) {
+          display: none;
+        }
+
         &-item {
           padding: 0 1.75rem;
           flex: 0 0 50%;
@@ -113,6 +117,10 @@
         border-bottom: 1px solid $cloud;
         padding-bottom: 1.8rem;
         margin: 0 -1rem 1.8rem;
+
+        @media (max-width: 991px) {
+          display: none;
+        }
 
         &-item {
           padding: 0 1rem;

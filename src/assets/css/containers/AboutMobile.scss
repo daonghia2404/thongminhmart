@@ -1,0 +1,8 @@
+.AboutMobile {
+  display: none;
+
+  @media (max-width: 991px) {
+    display: block;
+    margin-bottom: 2.5rem;
+  }
+}

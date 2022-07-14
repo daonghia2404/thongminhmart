@@ -1,0 +1,78 @@
+.ProductCategoryDrawer {
+  @include fullAbsolute;
+  position: fixed;
+  z-index: 10;
+  pointer-events: none;
+
+  &.active {
+    pointer-events: unset;
+
+    .ProductCategoryDrawer {
+      &-overlay {
+        opacity: 1
+      }
+
+      &-main {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  &-overlay {
+    @include fullAbsolute;
+    z-index: 1;
+    background: rgba($black, 0.5);
+    transition: $common-transition;
+    opacity: 0;
+  }
+
+  &-main {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: $white;
+    height: 100vh;
+    overflow: auto;
+    transition: $common-transition;
+    transform: translateX(-100%);
+
+    &-item {
+      display: block;
+      max-width: 12rem;
+      width: 100%;
+      padding: .8rem 1.2rem;
+      cursor: pointer;
+      transition: $common-transition;
+
+      &:hover,
+      &.active {
+        background: $yellow-sea;
+
+        .ProductCategoryDrawer-main-item {
+          &-title {
+            color: $white;
+          }
+        }
+      }
+
+      &-image {
+        display: block;
+        width: 7rem;
+        height: 7rem;
+        margin: 0 auto .6rem;
+        border-radius: .5rem;
+        background: $alto;
+        @include centerScaleImage;
+      }
+
+      &-title {
+        display: block;
+        font-size: 1.4rem;
+        color: $black;
+        transition: $common-transition;
+        @include ellipsis(1);
+      }
+    }
+  }
+}

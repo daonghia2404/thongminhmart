@@ -2,7 +2,9 @@ window.onload = () => {
   OwlCarousel.init();
   Amount.init();
   ProductBox.init();
-  // loading.init();
+  Collapse.init();
+  BankingInfo.init();
+  ProductCategoryDrawer.init();
 };
 
 const loading = {
@@ -15,8 +17,9 @@ const loading = {
 const OwlCarousel = {
   init: function () {
     this.setupBannerCarousel();
-    this.setupProductCategoryCarousel();
     this.setupNavigationCarousel();
+    this.setupProductCategoryCarousel();
+    this.setupProductCategoryCarouselMobile();
   },
   setupNavigationCarousel: function () {
     const $owl = $("#Navigation-carousel").owlCarousel({
@@ -107,6 +110,33 @@ const OwlCarousel = {
       margin: 30,
     });
   },
+  setupProductCategoryCarouselMobile: function () {
+    const $owl = $("#ProductCategory-carousel-mobile").owlCarousel({
+      responsive: {
+        0: {
+          items: 3,
+          slideBy: 1,
+        },
+        575: {
+          items: 4,
+          slideBy: 1,
+        },
+      },
+      loop: false,
+      autoplay: false,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true,
+      smartSpeed: 300,
+      lazyLoad: true,
+      dots: false,
+      nav: false,
+      navText: [
+        '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
+        '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
+      ],
+      margin: 20,
+    });
+  },
 };
 
 const Amount = {
@@ -145,6 +175,23 @@ const ProductBox = {
   init: function () {
     this.configProductBoxVideo();
     this.configProductDetailVideo();
+    this.configAddCartProductDetail();
+  },
+  configAddCartProductDetail: function () {
+    const btnOpen = document.querySelector(".ProductActions-item.cart");
+    const main = document.querySelector(".ProductCartDrawer");
+
+    if (btnOpen && main) {
+      btnOpen.addEventListener("click", () => {
+        main.classList.add("active");
+      });
+
+      const overlay = main.querySelector(".ProductCartDrawer-overlay");
+
+      overlay.addEventListener("click", () => {
+        main.classList.remove("active");
+      });
+    }
   },
   configProductBoxVideo: function () {
     const products = document.querySelectorAll(".ProductBox");
@@ -152,7 +199,7 @@ const ProductBox = {
       const video = item.querySelector(".ProductBox-video");
       const srcVideo = video.dataset.src;
 
-      item.addEventListener("mousemove", () => {
+      const startVideo = () => {
         if (!video.src) {
           video.addEventListener("loadeddata", () => {
             video.classList.add("loaded");
@@ -162,13 +209,18 @@ const ProductBox = {
 
         video.classList.add("active");
         video.play();
-      });
+      };
 
-      item.addEventListener("mouseleave", () => {
+      const endVideo = () => {
         video.classList.remove("active");
         video.pause();
         video.currentTime = 0;
-      });
+      };
+
+      item.addEventListener("mousemove", startVideo);
+      item.addEventListener("touchstart", startVideo);
+      item.addEventListener("mouseleave", endVideo);
+      item.addEventListener("touchend", endVideo);
     });
   },
   configProductDetailVideo: function () {
@@ -185,16 +237,94 @@ const ProductBox = {
         video.play();
       });
 
-      video.addEventListener('click', () => {
+      video.addEventListener("click", () => {
         if (video.paused) {
-          video.play()
+          video.play();
           playBtn.classList.remove("active");
         } else {
-          video.pause()
+          video.pause();
           playBtn.classList.add("active");
         }
-      })
+      });
       video.src = srcVideo;
+    }
+  },
+};
+
+const Collapse = {
+  init: function () {
+    this.config();
+  },
+  config: function () {
+    const mains = document.querySelectorAll(".Collapse");
+
+    mains.forEach((main) => {
+      const items = main.querySelectorAll(".Collapse-item");
+
+      items?.[0]?.classList?.add("active");
+
+      items.forEach((item, index) => {
+        const header = item.querySelector(".Collapse-item-header");
+
+        header.addEventListener("click", () => {
+          items.forEach((i, idx) => {
+            if (idx !== index) i.classList.remove("active");
+          });
+
+          item.classList.toggle("active");
+        });
+      });
+    });
+  },
+};
+
+const BankingInfo = {
+  init: function () {
+    this.toggle();
+  },
+  toggle: function () {
+    const bankingInfo = document.querySelector(".js-banking-info");
+    const bankingInfoCheck = document.querySelectorAll(
+      '.js-banking-info-check input[type="radio"]'
+    );
+
+    if (bankingInfo) {
+      bankingInfo.style.display = "none";
+    }
+
+    bankingInfoCheck.forEach((item) =>
+      item.addEventListener("change", () => {
+        const key = item.dataset.key;
+
+        if (key === "banking") {
+          bankingInfo.style.display = "block";
+        } else {
+          bankingInfo.style.display = "none";
+        }
+      })
+    );
+  },
+};
+
+const ProductCategoryDrawer = {
+  init: function () {
+    this.config();
+  },
+  config: function () {
+    const btnOpen = document.querySelector(".NavigationMobile .danhmuc");
+    const main = document.querySelector(".ProductCategoryDrawer");
+
+    if (btnOpen && main) {
+      btnOpen.addEventListener("click", (e) => {
+        e.preventDefault();
+        main.classList.add("active");
+      });
+
+      const overlay = main.querySelector(".ProductCategoryDrawer-overlay");
+
+      overlay.addEventListener("click", () => {
+        main.classList.remove("active");
+      });
     }
   },
 };

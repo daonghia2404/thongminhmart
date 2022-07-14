@@ -28,6 +28,10 @@ html {
 
 body {
   background: $wild-sand;
+
+  @media (max-width: 991px) {
+    padding-bottom: 8rem;
+  }
 }
 
 .container {
@@ -94,12 +98,31 @@ ul {
 }
 
 .style-content {
+
+  li,
   p {
     line-height: 1.5;
     font-size: 1.8rem;
     color: $mine-shaft;
     margin-bottom: 2.4rem;
     text-align: justify;
+  }
+
+  a {
+    color: $black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 2rem;
+  }
+
+  li {
+    margin-bottom: 0;
   }
 
   img {
@@ -112,6 +135,7 @@ ul {
 .color-black {
   color: $black !important;
 }
+
 .color-yellow-sea {
   color: $yellow-sea !important;
 }

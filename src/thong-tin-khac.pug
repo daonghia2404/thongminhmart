@@ -1,0 +1,60 @@
+extends includes/layouts/Guest.pug
+
+block pages
+  +Navigation({})
+  +NavigationMobile({ keyActive: 'thongtinkhac' })
+
+  .AnotherInfoPage
+    .container 
+      .AnotherInfoPage-wrapper 
+        .Collapse
+          .Collapse-item 
+            .Collapse-item-header.flex.items-center.justify-between 
+              .Collapse-item-header-title Về chúng tôi
+              .Collapse-item-header-arrow
+                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L7 7L1 0.999999" stroke="black" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+            .Collapse-item-body.style-content 
+              p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi quae ab nam sapiente dolores laborum amet fuga velit nemo, voluptatibus reiciendis ratione ipsum a dolor enim dicta perferendis placeat quos!
+
+          .Collapse-item 
+            .Collapse-item-header.flex.items-center.justify-between 
+              .Collapse-item-header-title Điều khoản chính sách
+              .Collapse-item-header-arrow
+                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L7 7L1 0.999999" stroke="black" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+            .Collapse-item-body.style-content 
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima blanditiis qui fuga deleniti deserunt! Modi consectetur reprehenderit nesciunt inventore, nobis voluptatum perspiciatis similique! Pariatur, laudantium quae optio consequuntur necessitatibus beatae?
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, laudantium veritatis! Corporis nihil aliquam ipsam, tempora, nesciunt enim quod id alias nulla magnam voluptas consequatur cumque reprehenderit blanditiis modi tenetur.
+
+          .Collapse-item 
+            .Collapse-item-header.flex.items-center.justify-between 
+              .Collapse-item-header-title Thông tin liên hệ
+              .Collapse-item-header-arrow
+                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L7 7L1 0.999999" stroke="black" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+            .Collapse-item-body.style-content 
+              p.color-yellow-sea CÔNG TY CỔ PHẦN TM&DV SMARTCHOISE
+
+              ul 
+                li Địa chỉ: 130A25 - Nghĩa Tân - Cầu Giấy - Hà Nộ
+                li #[a(href="tel: 0932868585") Điện thoại: Zalo - 093 286 8585]
+                li #[a(href="mailto: thongminhmart@gmail.com") Email: thongminhmart@gmail.com]
+                li #[a(href="www.thongminhmart.vn") Website: www.thongminhmart.vn]
+
+          .Collapse-item 
+            .Collapse-item-header.flex.items-center.justify-between 
+              .Collapse-item-header-title Kết nối với chúng tôi
+              .Collapse-item-header-arrow
+                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L7 7L1 0.999999" stroke="black" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+            .Collapse-item-body.style-content 
+              .AnotherInfoPage-socials.flex.flex-wrap.justify-center
+                a(href="#" target="_blank").AnotherInfoPage-socials-item
+                  img(src="./assets/icons/icon-facebook.svg", alt="") 
+                a(href="#" target="_blank").AnotherInfoPage-socials-item
+                  img(src="./assets/icons/icon-youtube.svg", alt="") 
+                a(href="#" target="_blank").AnotherInfoPage-socials-item
+                  img(src="./assets/icons/icon-zalo.svg", alt="") 
+                a(href="#" target="_blank").AnotherInfoPage-socials-item
+                  img(src="./assets/icons/icon-tiktok.svg", alt="") 

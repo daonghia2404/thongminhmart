@@ -2,7 +2,7 @@ extends includes/layouts/Guest.pug
 
 block pages
   +Navigation({})
-  +NavigationMobile({})
+  +NavigationMobile({ keyActive: 'giohang' })
 
   .CheckoutPage 
     .container 
@@ -32,7 +32,7 @@ block pages
                         +Button({ icon: 'trash', className: 'outline-gray only-icon' })
                         +Amount({})
 
-              .CheckoutPage-row.flex.justify-between
+              .CheckoutPage-row.flex.justify-between.items-center
                 .CheckoutPage-text Tạm tính:
                 .CheckoutPage-text.big.color-yellow-sea.nowrap 120 000 đ
 
@@ -69,24 +69,38 @@ block pages
           .Card-header 
             .Card-header-title.color-black Thông tin khác
           .Card-body
-            .CheckoutPage-form-row.half
+            .CheckoutPage-form-row.half.js-banking-info-check
               .CheckoutPage-form-row-control 
                 +Radio({ label: 'Giao nhanh', name: 'shippingType' })
               .CheckoutPage-form-row-control 
                 +Radio({ label: 'Giao chậm', name: 'shippingType' })
               .CheckoutPage-form-row-control 
                 +Radio({ label: 'Thanh toán khi nhận hàng', name: 'shippingType' })
-              .CheckoutPage-form-row-control 
-                +Radio({ label: 'Thanh toán chuyển khoản', name: 'shippingType' })
+              .CheckoutPage-form-row-control
+                +Radio({ key: 'banking', label: 'Thanh toán chuyển khoản', name: 'shippingType' })
+
+        .Card.js-banking-info
+          .Card-header 
+            .Card-header-title.color-black Thông tin chuyển khoản
+          .Card-body
+            .CheckoutPage-row.flex.justify-between.items-center
+              .CheckoutPage-text Tên tài khoản
+              .CheckoutPage-text.medium.nowrap CÔNG TY DỊCH VỤ VÀ CỔ PHẦN THONGMINHMART
+            .CheckoutPage-row.flex.justify-between.items-center
+              .CheckoutPage-text Số tài khoản
+              .CheckoutPage-text.medium.nowrap 1010101010
+            .CheckoutPage-row.flex.justify-between.items-center
+              .CheckoutPage-text Ngân hàng
+              .CheckoutPage-text.medium.nowrap Vietcombank
               
 
         .Card
           .Card-body
-            .CheckoutPage-row.flex.justify-between
+            .CheckoutPage-row.flex.justify-between.items-center
               .CheckoutPage-text Phí vận chuyển: (miễn phí vận  chuyển cho đơn hàng trị giá trên 1 triệu đồng)
               .CheckoutPage-text.medium.nowrap 30 000 đ
 
-            .CheckoutPage-row.flex.justify-between
+            .CheckoutPage-row.flex.justify-between.items-center
               .CheckoutPage-text Thành tiền:
               .CheckoutPage-text.big.color-yellow-sea.nowrap 120 000 đ
 

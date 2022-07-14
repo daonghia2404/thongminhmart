@@ -1,6 +1,6 @@
-mixin Radio({ className = '', type = 'text', size = 'middle', label = '', name = '' })
+mixin Radio({ className = '', type = 'text', size = 'middle', label = '', name = '', key = '' })
   .Radio(class=`${className} ${size}`)
-    input(type="radio" name=`${name}`).Radio-control
+    input(type="radio" name=`${name}` data-key=`${key}`).Radio-control
     .Radio-wrapper.flex.items-center
       .Radio-wrapper-box 
       .Radio-wrapper-label= label

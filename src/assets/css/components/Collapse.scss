@@ -1,0 +1,74 @@
+.Collapse {
+  &-item {
+    &.active {
+      .Collapse-item {
+        &-header {
+          &-arrow {
+            transform: rotate(180deg);
+          }
+        }
+
+        &-body {
+          padding: 2.2rem 1.6rem;
+          overflow: auto;
+          max-height: 100vh;
+          border-color: $gallery;
+        }
+      }
+    }
+
+    &-header {
+      padding: 2.2rem 1.6rem;
+      background: $white;
+      cursor: pointer;
+      border-bottom: 1px solid $gallery;
+
+      &:hover {
+        .Collapse-item-header {
+          &-title {
+            color: $yellow-sea;
+          }
+
+          &-arrow {
+            svg {
+              path {
+                stroke: $yellow-sea;
+              }
+            }
+          }
+        }
+      }
+
+      &-title {
+        font-size: 1.6rem;
+        color: $black;
+        font-weight: 500;
+        transition: $common-transition;
+      }
+
+      &-arrow {
+        width: 1.2rem;
+        height: 1.2rem;
+        transition: $common-transition;
+
+        svg {
+          width: 100%;
+          height: 100%;
+
+          path {
+            transition: $common-transition;
+          }
+        }
+      }
+    }
+
+    &-body {
+      padding: 0 1.6rem;
+      transition: $common-transition;
+      max-height: 0;
+      background: $white;
+      border-bottom: 1px solid transparent;
+      overflow: hidden;
+    }
+  }
+}

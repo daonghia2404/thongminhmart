@@ -1,7 +1,7 @@
 mixin ProductBox({ link = '#', image, video, title, price, oldPrice })
   .ProductBox
     .ProductBox-image 
-      a(href=`${link}`)
+      .ProductBox-image-wrapper
         img(src=`${image}`, alt="")
 
         video(data-src=`${video}` muted loop).ProductBox-video

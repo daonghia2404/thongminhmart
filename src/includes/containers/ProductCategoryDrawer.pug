@@ -1,0 +1,9 @@
+.ProductCategoryDrawer
+  .ProductCategoryDrawer-overlay
+  .ProductCategoryDrawer-main
+    each item in [1,2,3,4,5,6,7,8]
+      a(href="danh-sach-san-pham.html").ProductCategoryDrawer-main-item
+        span.ProductCategoryDrawer-main-item-image
+          img(src="", alt="")
+
+        span.ProductCategoryDrawer-main-item-title= `Danh mục ${item}`

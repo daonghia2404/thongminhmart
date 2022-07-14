@@ -2,10 +2,12 @@ extends includes/layouts/Guest.pug
 
 block pages
   +Navigation({})
-  +NavigationMobile({})
+  +NavigationMobile({ keyActive: 'trangchu' })
   
   include includes/containers/Banner.pug
   include includes/containers/ProductCategory.pug
   +ProductList({ title: 'Gợi ý hôm nay' })
+
+  include includes/containers/AboutMobile.pug
   
   

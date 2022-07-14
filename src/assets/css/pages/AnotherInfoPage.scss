@@ -1,0 +1,17 @@
+.AnotherInfoPage {
+  &-socials {
+    margin-bottom: -2.6rem;
+
+    &-item {
+      display: block;
+      flex: 0 0 5.5rem;
+      max-width: 5.5rem;
+      margin: 0 1.3rem 2.6rem;
+
+      img {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}

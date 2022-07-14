@@ -52,11 +52,6 @@ var minify = require('gulp-minify');
 
 gulp.task('minifyJS', () => {
   return gulp.src('./src/assets/js/**/*.js')
-    .pipe(minify({
-      ext: {
-        min: '.js'
-      },
-    }))
     .pipe(gulp.dest('dist/assets/js'))
 });
 

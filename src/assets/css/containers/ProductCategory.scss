@@ -2,11 +2,31 @@
   margin-bottom: 2.5rem;
 
   &-list {
+    &.desktop {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+
+    &.mobile {
+      display: none;
+
+      @media (max-width: 991px) {
+        display: block;
+      }
+    }
+
     &-item {
       position: relative;
       border-radius: 5px;
       overflow: hidden;
       background: $alto;
+
+      @media (max-width: 991px) {
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
 
       &-image {
         a {

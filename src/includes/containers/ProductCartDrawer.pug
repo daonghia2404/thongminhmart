@@ -1,0 +1,39 @@
+.ProductCartDrawer
+  .ProductCartDrawer-overlay
+  .ProductCartDrawer-main
+    .ProductCartDrawer-product.flex 
+      .ProductCartDrawer-product-image 
+        img(src="./assets/images/image-product.png", alt="")
+      .ProductCartDrawer-product-info
+        .ProductCartDrawer-product-info-title Lorem Ipsum is simply dummy text of the 
+        .ProductCartDrawer-product-info-price 
+          span 120,000 đ
+          del 190,000 đ
+
+    .ProductDetailPage-detail-info-options-item
+      .ProductDetailPage-detail-info-options-item-row.flex.items-center 
+        .ProductDetailPage-detail-info-options-item-row-label Màu sắc
+        .ProductDetailPage-detail-info-options-item-row-control
+          +Select({
+            options: [
+              { label: 'Trắng', value: 'white' },
+              { label: 'Đỏ', value: 'red' },
+              { label: 'Xanh', value: 'blue' },
+            ],
+          })
+
+      .ProductDetailPage-detail-info-options-item-row.flex.items-center 
+        .ProductDetailPage-detail-info-options-item-row-label Kích cỡ
+        .ProductDetailPage-detail-info-options-item-row-control
+          +Select({
+            options: [
+              { label: 'Nhỏ', value: 'small' },
+              { label: 'Vừa', value: 'medium' },
+              { label: 'To', value: 'large' },
+            ],
+          })
+
+      .ProductDetailPage-detail-info-options-item-row.flex.items-center 
+        .ProductDetailPage-detail-info-options-item-row-label Số lượng
+        .ProductDetailPage-detail-info-options-item-row-control
+          +Amount({})

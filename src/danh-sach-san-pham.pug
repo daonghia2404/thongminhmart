@@ -2,7 +2,7 @@ extends includes/layouts/Guest.pug
 
 block pages
   +Navigation({})
-  +NavigationMobile({})
+  +NavigationMobile({ keyActive: 'danhmuc' })
   
   +Breadcrumb({ data: [
     { link: 'index.html', title: 'Trang chủ' },

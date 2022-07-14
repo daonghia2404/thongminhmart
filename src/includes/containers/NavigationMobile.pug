@@ -1,17 +1,17 @@
 -
   const dataNavigationMobile = [
-    { link: '#', icon: 'home', key: 'trangchu', title: 'Trang chủ' },
+    { link: 'index.html', icon: 'home', key: 'trangchu', title: 'Trang chủ' },
     { link: '#', icon: 'grid', key: 'danhmuc', title: 'Danh mục' },
-    { link: '#', icon: 'cart', key: 'giohang', title: 'Giỏ hàng' },
-    { link: '#', icon: 'global', key: 'tintuc', title: 'Tin tức' },
-    { link: '#', icon: 'info', key: 'thongtinkhac', title: 'Thông tin khác' },
+    { link: 'thanh-toan.html', icon: 'cart', key: 'giohang', title: 'Giỏ hàng' },
+    { link: 'danh-sach-bai-viet.html', icon: 'global', key: 'tintuc', title: 'Tin tức' },
+    { link: 'thong-tin-khac.html', icon: 'info', key: 'thongtinkhac', title: 'Thông tin khác' },
   ]
 
 mixin NavigationMobile({ keyActive })
   .NavigationMobile
     .NavigationMobile-wrapper.flex.items-center.justify-between
       each item in dataNavigationMobile
-        a(class=`${keyActive === item.key ? 'active' : ''}` href=`${item.link}`).NavigationMobile-wrapper-item
+        a(class=`${keyActive === item.key ? 'active' : ''} ${item.key}` href=`${item.link}`).NavigationMobile-wrapper-item
           span.NavigationMobile-wrapper-item-icon
             if (item.icon === 'home')
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M14.7832 4.46262L10.4744 0.900018C9.02296 -0.300006 6.97704 -0.300006 5.52562 0.900018L1.21678 4.46262C0.440472 5.10447 0 6.07764 0 7.09304V12.6487C0 14.4528 1.38732 16 3.2 16H4.8C5.68366 16 6.4 15.2837 6.4 14.4V11.7982C6.4 10.7842 7.16168 10.047 8 10.047C8.83832 10.047 9.6 10.7842 9.6 11.7982V14.4C9.6 15.2837 10.3163 16 11.2 16H12.8C14.6127 16 16 14.4528 16 12.6487V7.09304C16 6.07765 15.5595 5.10447 14.7832 4.46262Z" fill="#929191"/></svg>
