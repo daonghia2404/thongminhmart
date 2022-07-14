@@ -4,6 +4,12 @@
       &-control {
         background: $yellow-sea;
         color: $white;
+
+        &-icon {
+          .fill {
+            fill: $white;
+          }
+        }
       }
     }
   }
@@ -46,6 +52,13 @@
         font-size: 2.2rem;
         font-weight: 700;
         padding: 1.5rem;
+
+        &-icon {
+          width: 2.4rem;
+          flex: 0 0 2.4rem;
+          max-width: 2.4rem;
+          height: 2.4rem;
+        }
       }
     }
   }

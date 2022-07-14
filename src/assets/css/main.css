@@ -1000,6 +1000,8 @@ ul {
 .Button.primary .Button-control {
   background: #FBB508;
   color: #fff; }
+  .Button.primary .Button-control-icon .fill {
+    fill: #fff; }
 
 .Button.outline-gray .Button-control {
   background: #fff;
@@ -1020,6 +1022,11 @@ ul {
   font-size: 2.2rem;
   font-weight: 700;
   padding: 1.5rem; }
+  .Button.big .Button-control-icon {
+    width: 2.4rem;
+    flex: 0 0 2.4rem;
+    max-width: 2.4rem;
+    height: 2.4rem; }
 
 .Button-control {
   width: 100%;
@@ -2049,6 +2056,10 @@ ul {
       margin-left: 1.2rem;
       font-size: 2.2rem;
       color: #777; }
+  .ProductCartDrawer-submit {
+    margin: 0 -1.6rem -1.6rem;
+    background: #EEEEEE;
+    padding: 1.6rem; }
 
 .NewsListPage-wrapper-item {
   margin-bottom: 2rem; }
