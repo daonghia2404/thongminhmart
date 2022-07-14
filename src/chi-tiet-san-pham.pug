@@ -4,6 +4,8 @@ block pages
   include includes/containers/ProductActions.pug
   include includes/containers/ProductCartDrawer.pug
 
+  +Navigation({})
+
   +Breadcrumb({ data: [
     { link: 'index.html', title: 'Trang chủ' },
     { link: 'danh-sach-san-pham.html', title: 'Danh sách sản phẩm' },
@@ -19,9 +21,9 @@ block pages
               .ProductDetailPage-detail-image 
                 img(src="./assets/images/image-product.png", alt="")
 
-                video(data-src="./assets/videos/video-product-1.mp4" muted loop).ProductDetailPage-detail-video
+                video(src="./assets/videos/video-product-1.mp4" autoplay muted loop).ProductDetailPage-detail-video
 
-                .ProductDetailPage-detail-image-play.active
+                .ProductDetailPage-detail-image-play
                   img(src="./assets/icons/icon-play.svg", alt="")
 
               .ProductDetailPage-detail-info

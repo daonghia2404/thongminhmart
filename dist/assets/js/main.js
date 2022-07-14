@@ -229,8 +229,6 @@ const ProductBox = {
       ".ProductDetailPage-detail-image-play"
     );
     if (video && playBtn) {
-      const srcVideo = video.dataset.src;
-
       video.addEventListener("loadeddata", () => {
         video.classList.add("loaded");
         playBtn.classList.remove("active");
@@ -246,7 +244,6 @@ const ProductBox = {
           playBtn.classList.add("active");
         }
       });
-      video.src = srcVideo;
     }
   },
 };
