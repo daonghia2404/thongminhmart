@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title List Pages
+  body 
+    -
+      const dataListPages = [
+        { link: 'index.html', title: 'Trang chủ' },
+        { link: 'danh-sach-san-pham.html', title: 'Danh sách sản phẩm' },
+        { link: 'chi-tiet-san-pham.html', title: 'Chi tiết sản phẩm' },
+        { link: 'danh-sach-bai-viet.html', title: 'Danh sách bài viết' },
+        { link: 'chi-tiet-bai-viet.html', title: 'Chi tiết bài viết' },
+        { link: 'thanh-toan.html', title: 'Thanh toán' },
+      ]
+    each item in dataListPages
+      a(href=`${item.link}` target="_blank")= item.title
+      br
