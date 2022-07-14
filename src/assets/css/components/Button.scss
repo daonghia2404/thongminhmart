@@ -1,0 +1,78 @@
+.Button {
+  &.primary {
+    .Button {
+      &-control {
+        background: $yellow-sea;
+        color: $white;
+      }
+    }
+  }
+
+  &.outline-gray {
+    .Button {
+      &-control {
+        background: $white;
+        border: 1px solid $cloud;
+        color: $black;
+      }
+    }
+  }
+
+  &.outline-primary {
+    .Button {
+      &-control {
+        background: $white;
+        border: 1px solid $yellow-sea;
+        color: $black;
+      }
+    }
+  }
+
+  &.only-icon {
+    .Button {
+      &-control {
+        padding: 1.1rem;
+
+        &-icon {
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+
+  &.big {
+    .Button {
+      &-control {
+        font-size: 2.2rem;
+        font-weight: 700;
+        padding: 1.5rem;
+      }
+    }
+  }
+
+  &-control {
+    width: 100%;
+    outline: none;
+    border: none;
+    transition: $common-transition;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border-radius: .5rem;
+
+    &-icon {
+      width: 1.8rem;
+      flex: 0 0 1.8rem;
+      max-width: 1.8rem;
+      height: 1.8rem;
+      margin-right: .9rem;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

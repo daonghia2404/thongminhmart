@@ -1,0 +1,11 @@
+extends includes/layouts/Guest.pug
+
+block pages
+  +Navigation({})
+  +NavigationMobile({})
+  
+  include includes/containers/Banner.pug
+  include includes/containers/ProductCategory.pug
+  +ProductList({ title: 'Gợi ý hôm nay' })
+  
+  

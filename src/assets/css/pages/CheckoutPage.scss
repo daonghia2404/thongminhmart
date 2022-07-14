@@ -1,0 +1,166 @@
+.CheckoutPage {
+  .Card {
+    margin-bottom: 2.5rem;
+  }
+
+  &-text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+
+    &.medium {
+      font-size: 2.8rem;
+      font-weight: 500;
+    }
+
+    &.big {
+      font-size: 3.2rem;
+      font-weight: 700;
+    }
+  }
+
+  &-form {
+    &-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1rem;
+
+      &-address {
+        margin-bottom: 2rem;
+        position: relative;
+        padding: 1.4rem 2.8rem;
+        background-color: $gallery;
+        border-radius: .5rem;
+
+        @media (max-width: 991px) {
+          padding: 1.4rem;
+        }
+
+        &::before {
+          position: absolute;
+          width: 1.8rem;
+          height: 1.8rem;
+          top: 0;
+          left: 5rem;
+          transform: translateY(-50%) rotate(45deg);
+          content: '';
+          background-color: $gallery;
+        }
+      }
+
+      &.half {
+        .CheckoutPage-form-row {
+          &-control {
+            flex: 0 0 50%;
+            max-width: 50%;
+
+            &:nth-last-child(1),
+            &:nth-last-child(2) {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      &-control {
+        padding: 0 1rem;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &-list-product {
+    &-wrapper {
+      max-height: 84rem;
+      overflow: auto;
+      margin-bottom: 4rem;
+    }
+
+    &-item {
+      border: 1px solid $cloud;
+
+      &-image {
+        flex: 0 0 19rem;
+        max-width: 19rem;
+        border-right: 1px solid $cloud;
+        background: $concrete;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 375px) {
+          flex: 0 0 16rem;
+          max-width: 16rem;
+        }
+
+        a {
+          height: 19rem;
+
+          @media (max-width: 375px) {
+            height: 16rem;
+          }
+
+          padding: 1rem;
+          @include centerOriginImage;
+        }
+      }
+
+      &-info {
+        flex: 1;
+        padding: 2rem 3rem 1.5rem;
+
+        &-header {
+          margin-bottom: 1rem;
+
+          @media (max-width: 375px) {
+            flex-direction: column;
+            justify-content: unset;
+          }
+        }
+
+        &-title {
+          font-size: 2.2rem;
+          color: $black;
+          flex: 1;
+          margin-right: 1.6rem;
+
+          @media (max-width: 375px) {
+            margin: 0 0 1.6rem 0;
+          }
+        }
+
+        &-price {
+          font-size: 2.8rem;
+          font-weight: 700;
+          color: $yellow-sea;
+          white-space: nowrap;
+        }
+
+        &-description {
+          span {
+            font-size: 1.8rem;
+            margin-right: 1.2rem;
+            color: $boulder;
+          }
+        }
+
+        &-actions {
+          margin-top: 6.5rem;
+
+          @media (max-width: 991px) {
+            flex-direction: row-reverse;
+
+            .Amount {
+              margin-right: 1.6rem;
+            }
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

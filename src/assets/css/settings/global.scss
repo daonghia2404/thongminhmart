@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lexend', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 10px;
+
+  @media (max-width: 1600px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 7px;
+  }
+
+  @media (max-width: 575px) {
+    font-size: 6px;
+  }
+}
+
+body {
+  background: $wild-sand;
+}
+
+.container {
+  max-width: 144rem;
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.style-content {
+  p {
+    line-height: 1.5;
+    font-size: 1.8rem;
+    color: $mine-shaft;
+    margin-bottom: 2.4rem;
+    text-align: justify;
+  }
+
+  img {
+    max-width: 100%;
+    margin: 0 auto 2.4rem;
+    display: block;
+  }
+}
+
+.color-black {
+  color: $black !important;
+}
+.color-yellow-sea {
+  color: $yellow-sea !important;
+}

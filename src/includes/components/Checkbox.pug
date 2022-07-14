@@ -1,0 +1,6 @@
+mixin Checkbox({ className = '', type = 'text', size = 'middle', label = '' })
+  .Checkbox(class=`${className} ${size}`)
+    input(type="checkbox").Checkbox-control
+    .Checkbox-wrapper.flex.items-start
+      .Checkbox-wrapper-box 
+      .Checkbox-wrapper-label= label

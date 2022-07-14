@@ -1,0 +1,58 @@
+.ProductBox {
+  border: 1px solid $alto;
+
+  &-video {
+    @include fullAbsolute;
+    object-fit: cover;
+    object-position: center;
+    transition: $common-transition;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+
+    &.loaded {
+      display: block;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &-image {
+    background: $concrete;
+
+    a {
+      position: relative;
+      padding: 1.5rem;
+      height: 30.4rem;
+      @include centerOriginImage;
+    }
+  }
+
+  &-info {
+    padding: 1.5rem;
+  }
+
+  &-title {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
+    height: 5rem;
+    color: $black;
+    @include ellipsis(2);
+  }
+
+  &-price {
+    span {
+      color: $pirate-gold;
+      font-size: 1.8rem;
+    }
+
+    del {
+      font-size: 1.6rem;
+      margin-right: 1.8rem;
+      color: $emperor;
+    }
+  }
+}

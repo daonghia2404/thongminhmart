@@ -1,0 +1,38 @@
+extends includes/layouts/Guest.pug
+
+block pages
+  +Navigation({})
+  +NavigationMobile({})
+
+  +Breadcrumb({ data: [
+    { link: 'index.html', title: 'Trang chủ' },
+    { link: 'danh-sach-bai-viet.html', title: 'Danh sách bài viết' },
+  ] })
+
+  .NewsListPage 
+    .container 
+      .NewsListPage-wrapper.flex.flex-wrap 
+        .NewsListPage-wrapper-item
+          .Card 
+            .Card-body 
+              include includes/containers/NewsList.pug
+            .Card-footer.flex.justify-end
+              +Pagination({})
+
+        .NewsListPage-wrapper-item
+          .Card 
+            .Card-header 
+              .Card-title Kiến thức nổi bật
+            .Card-body 
+              each item in [1,2,3,4,5]
+                +NewBox({
+                  image: './assets/images/image-new-vertical.png',
+                  title: 'Lorem Ipsum is simply dummy text of the printing ',
+                  description: 'Lorem Ipsum is simply dummy text of the printing and typesetting ...',
+                  date: '29/12/2021',
+                  link: '#',
+                  vertical: true,
+                })
+
+              +Button({ title: 'Xem thêm', className: 'primary' })
+

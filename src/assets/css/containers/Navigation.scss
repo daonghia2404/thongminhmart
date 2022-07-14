@@ -1,0 +1,52 @@
+.Navigation {
+  background: $buttercup;
+  margin-bottom: 2.5rem;
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+
+  &-carousel {
+    max-width: 50rem;
+
+    &-item {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: $white;
+      @include ellipsis(1);
+    }
+  }
+
+  &-list {
+    &-item {
+      display: block;
+      color: $white;
+      padding: 1.5rem 0;
+      margin-left: 3rem;
+      white-space: nowrap;
+      font-size: 1.8rem;
+      font-weight: 500;
+      position: relative;
+
+      &:hover,
+      &.active {
+        &::before {
+          transform: translateX(-50%) scaleX(1);
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        bottom: .5rem;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        transition: $common-transition;
+        width: 2.4rem;
+        height: .2rem;
+        background: $white;
+        border-radius: .5rem;
+      }
+    }
+  }
+}

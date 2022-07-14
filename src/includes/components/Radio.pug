@@ -1,0 +1,6 @@
+mixin Radio({ className = '', type = 'text', size = 'middle', label = '', name = '' })
+  .Radio(class=`${className} ${size}`)
+    input(type="radio" name=`${name}`).Radio-control
+    .Radio-wrapper.flex.items-center
+      .Radio-wrapper-box 
+      .Radio-wrapper-label= label

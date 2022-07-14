@@ -1,0 +1,15 @@
+mixin ProductBox({ link = '#', image, video, title, price, oldPrice })
+  .ProductBox
+    .ProductBox-image 
+      a(href=`${link}`)
+        img(src=`${image}`, alt="")
+
+        video(data-src=`${video}` muted loop).ProductBox-video
+
+    .ProductBox-info
+      a(href=`${link}`).ProductBox-title= title
+
+      .ProductBox-price 
+        if oldPrice
+          del= oldPrice
+        span= price 

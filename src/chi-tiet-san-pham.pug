@@ -1,0 +1,114 @@
+extends includes/layouts/Guest.pug
+
+block pages
+  +Navigation({})
+  +NavigationMobile({})
+
+  +Breadcrumb({ data: [
+    { link: 'index.html', title: 'Trang chủ' },
+    { link: 'danh-sach-san-pham.html', title: 'Danh sách sản phẩm' },
+    { link: 'chi-tiet-san-pham.html', title: 'Chi tiết' },
+  ] })
+
+  .ProductDetailPage 
+    .container 
+      .ProductDetailPage-wrapper 
+        .Card.ProductDetailPage-detail 
+          .Card-body
+            .ProductDetailPage-detail-wrapper.flex.flex-wrap
+              .ProductDetailPage-detail-image 
+                img(src="./assets/images/image-product.png", alt="")
+
+                video(data-src="./assets/videos/video-product-1.mp4" muted loop).ProductDetailPage-detail-video
+
+                .ProductDetailPage-detail-image-play 
+                  img(src="./assets/icons/icon-play.svg", alt="")
+
+              .ProductDetailPage-detail-info
+                .ProductDetailPage-detail-info-title Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+
+                .ProductDetailPage-detail-info-basic.flex.justify-between 
+                  .ProductDetailPage-detail-info-basic-item   
+                    .ProductDetailPage-detail-info-text Giá bán 
+                    br
+
+                    .ProductDetailPage-detail-info-basic-price.flex.items-center
+                      span 120,000 đ
+                      del 190,000 đ
+
+                  .ProductDetailPage-detail-info-basic-item   
+                    .ProductDetailPage-detail-info-text MSP: 123456
+
+                .ProductDetailPage-detail-info-options.flex.flex-wrap
+                  .ProductDetailPage-detail-info-options-item
+                    .ProductDetailPage-detail-info-options-item-title
+
+                    .ProductDetailPage-detail-info-options-item-row.flex.items-center 
+                      .ProductDetailPage-detail-info-options-item-row-label Màu sắc
+                      .ProductDetailPage-detail-info-options-item-row-control
+                        +Select({
+                          options: [
+                            { label: 'Trắng', value: 'white' },
+                            { label: 'Đỏ', value: 'red' },
+                            { label: 'Xanh', value: 'blue' },
+                          ],
+                        })
+
+                    .ProductDetailPage-detail-info-options-item-row.flex.items-center 
+                      .ProductDetailPage-detail-info-options-item-row-label Kích cỡ
+                      .ProductDetailPage-detail-info-options-item-row-control
+                        +Select({
+                          options: [
+                            { label: 'Nhỏ', value: 'small' },
+                            { label: 'Vừa', value: 'medium' },
+                            { label: 'To', value: 'large' },
+                          ],
+                        })
+
+                    .ProductDetailPage-detail-info-options-item-row.flex.items-center 
+                      .ProductDetailPage-detail-info-options-item-row-label Số lượng
+                      .ProductDetailPage-detail-info-options-item-row-control
+                        +Amount({})
+
+                  .ProductDetailPage-detail-info-options-item
+                    .ProductDetailPage-detail-info-options-item-title Thêm vào giỏ hàng
+                    .ProductDetailPage-detail-info-options-item-carts
+                      each item in [1,2,3,4,5,6,7,8]
+                        .ProductDetailPage-detail-info-options-item-carts-item.flex.items-center
+                          .ProductDetailPage-detail-info-options-item-carts-item-title 1 sản phẩm - Màu sắc: Trắng - Kích cỡ: 5x7x3
+                          .ProductDetailPage-detail-info-options-item-carts-item-remove 
+                            img(src="./assets/icons/icon-x-yellow.svg", alt="")
+
+                .ProductDetailPage-detail-info-actions.flex.flex-wrap
+                  .ProductDetailPage-detail-info-actions-item
+                    +Button({ title: 'Thêm vào giỏ hàng', icon: 'cart', className: 'outline-gray' })
+                  .ProductDetailPage-detail-info-actions-item
+                    +Button({ title: 'Mua ngay', className: 'primary' })
+
+        .ProductDetailPage-row.flex.flex-wrap 
+          .ProductDetailPage-row-item
+            .Card 
+              .Card-header 
+                .Card-header-title.color-black Mô tả sản phẩm
+              .Card-body 
+                .style-content 
+                  p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 
+                  img(src="./assets/images/image-product-detail-content.png", alt="")
+                  p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting 
+
+          .ProductDetailPage-row-item
+            .Card.sticky
+              .Card-header 
+                .Card-header-title.color-black Thông tin chi tiết
+              .Card-body 
+                .ProductDetailPage-table-content
+                  table
+                    each item in [1,2,3]
+                      tr 
+                        td Bảo hành 
+                        td 24 tháng
+                      tr 
+                        td Công nghệ
+                        td Thẩm thấu ngược BO
+
+    +ProductList({ title: 'Có thể bạn sẽ thích', hideLoadMore: true })

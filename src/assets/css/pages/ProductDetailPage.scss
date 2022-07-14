@@ -1,0 +1,255 @@
+.ProductDetailPage {
+  &-detail {
+    margin-bottom: 2.5rem;
+
+    &-video {
+      @include fullAbsolute;
+      object-fit: cover;
+      object-position: center;
+      transition: $common-transition;
+      display: none;
+      z-index: 2;
+      cursor: pointer;
+
+      &.loaded {
+        display: block;
+      }
+    }
+
+    &-image {
+      position: relative;
+      flex: 0 0 59rem;
+      max-width: 59rem;
+      height: 59rem;
+      margin-right: 3.5rem;
+      background: $concrete;
+      box-shadow: 0px .4rem 2rem rgba($black, 0.1);
+      @include centerOriginImage;
+
+      @media (max-width: 991px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 2.5rem;
+      }
+
+      &-play {
+        @include centerAbsolute;
+        width: 9rem;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 3;
+        pointer-events: none;
+
+        &.active {
+          opacity: 1;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    &-info {
+      flex: 1;
+
+      @media (max-width: 991px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      &-title {
+        font-size: 2.4rem;
+        border-bottom: 1px solid $cloud;
+        padding-bottom: 1.8rem;
+        margin-bottom: 1.8rem;
+      }
+
+      &-basic {
+        border-bottom: 1px solid $cloud;
+        padding-bottom: 1.8rem;
+        margin-bottom: 1.8rem;
+
+        &-price {
+          span {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: $yellow-sea;
+          }
+
+          del {
+            margin-left: 1.2rem;
+            color: $emperor;
+            font-size: 1.8rem;
+          }
+        }
+      }
+
+      &-actions {
+        margin: 0 -1.75rem;
+
+        &-item {
+          padding: 0 1.75rem;
+          flex: 0 0 50%;
+          max-width: 50%;
+
+          @media (max-width: 575px) {
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            &:not(:last-child) {
+              margin-bottom: 1.5rem;
+            }
+          }
+        }
+      }
+
+      &-text {
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+
+      &-options {
+        border-bottom: 1px solid $cloud;
+        padding-bottom: 1.8rem;
+        margin: 0 -1rem 1.8rem;
+
+        &-item {
+          padding: 0 1rem;
+          flex: 0 0 50%;
+          max-width: 50%;
+
+          @media (max-width: 575px) {
+            flex: 0 0 100%;
+            max-width: 100%;
+
+            &:not(:last-child) {
+              margin-bottom: 1.5rem;
+            }
+          }
+
+          &-title {
+            height: 2.5rem;
+            margin-bottom: 1.6rem;
+            font-size: 1.8rem;
+            text-align: center;
+          }
+
+          &-row {
+            margin-bottom: 2rem;
+
+            .Amount {
+              max-width: 23.5rem;
+            }
+
+            &-label {
+              flex: 0 0 8rem;
+              max-width: 8rem;
+              font-size: 1.6rem;
+              font-weight: 600;
+              margin-right: 3rem;
+            }
+
+            &-control {
+              flex: 1;
+            }
+          }
+
+          &-carts {
+            height: 27rem;
+            overflow: auto;
+            padding: 1.6rem;
+            border: 1px solid $cloud;
+
+            &-item {
+              padding: .4rem 0;
+
+              &-title {
+                font-size: 1.6rem;
+                flex: 1;
+              }
+
+              &-remove {
+                flex: 0 0 1.7rem;
+                max-width: 1.7rem;
+                margin-left: .8rem;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-row {
+    &-item {
+      margin-bottom: 2.5rem;
+
+      .sticky {
+        @media (min-width: 992px) {
+          position: sticky;
+          top: 1.6rem;
+        }
+      }
+
+      &:first-child {
+        flex: 1;
+        margin-right: 2rem;
+
+        @media (max-width: 991px) {
+          order: 2;
+        }
+      }
+
+      &:last-child {
+        flex: 0 0 39rem;
+        max-width: 39rem;
+
+        @media (max-width: 991px) {
+          order: 1;
+        }
+      }
+
+      @media (max-width: 991px) {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  }
+
+  &-table-content {
+    margin: -2rem -2.4rem;
+
+    table {
+      width: 100%;
+      border: none;
+      border-collapse: collapse;
+
+      tr:nth-child(even) {
+        td {
+          background: rgba($black, 0.05);
+        }
+      }
+
+      td {
+        padding: 1.4rem;
+
+        &:first-child {
+          font-size: 1.6rem;
+          color: $boulder;
+        }
+
+        &:last-child {
+          text-align: right;
+          font-size: 1.8rem;
+          color: $black;
+        }
+      }
+    }
+  }
+}

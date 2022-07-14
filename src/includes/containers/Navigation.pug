@@ -1,0 +1,25 @@
+-
+  const dataNavigation = [
+    { link: '#', key: 'gioithieu', title: 'Giới thiệu' },
+    { link: '#', key: 'chinhsach', title: 'Chính sách' },
+    { link: '#', key: 'kienthuc', title: 'Kiến thức' },
+    { link: '#', key: 'doitac', title: 'Đối tác' },
+    { link: '#', key: 'tuyendung', title: 'Tuyển dụng' },
+    { link: '#', key: 'lienhe', title: 'Liên hệ' },
+  ]
+
+mixin Navigation({ keyActive })
+  nav.Navigation
+    .container
+      .Navigation-wrapper.flex.items-center.justify-between 
+        .Navigation-wrapper-item
+          .Navigation-carousel.owl-carousel#Navigation-carousel
+            each item in [1,2,3,4]
+              .item 
+                .Navigation-carousel-item Lorem Ipsum is simply dummy text of the printing
+
+        .Navigation-wrapper-item
+          .Navigation-list.flex.items-center 
+            each item in dataNavigation
+              a(href=`${item.link}` class=`${item.key === keyActive ? 'active' : ''}`).Navigation-list-item= item.title
+

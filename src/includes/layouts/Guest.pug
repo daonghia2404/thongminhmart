@@ -1,0 +1,53 @@
+include ../common/Data.pug
+include ../common/Functions.pug
+
+include ../components/Button.pug
+include ../components/Input.pug
+include ../components/Select.pug
+include ../components/Checkbox.pug
+include ../components/Radio.pug
+include ../components/Breadcrumb.pug
+include ../components/ProductBox.pug
+include ../components/NewBox.pug
+include ../components/Pagination.pug
+include ../components/Amount.pug
+include ../components/TextArea.pug
+
+include ../containers/ProductList.pug
+include ../containers/Navigation.pug
+include ../containers/NavigationMobile.pug
+
+
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		title Thông Minh Mart
+		block head
+
+		//- CSS
+		link(rel="stylesheet" type="text/css" href="./assets/css/main.css")
+
+		//- Favicon
+		link(rel="icon" type="image/png" href="./assets/images/favicon.png")
+
+
+	body
+		#top
+		include ../containers/Header.pug
+
+		block pages
+
+		include ../containers/Footer.pug
+
+		include ../components/ButtonToTop.pug
+		include ../components/ButtonsCta.pug
+		
+		block script
+
+		//- Java Script
+		script(src="./assets/js/jquery.min.js")
+		script(src="./assets/js/owl.carousel.min.js")
+		script(src="./assets/js/main.js")

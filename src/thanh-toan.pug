@@ -1,0 +1,94 @@
+extends includes/layouts/Guest.pug
+
+block pages
+  +Navigation({})
+  +NavigationMobile({})
+
+  .CheckoutPage 
+    .container 
+      .CheckoutPage-wrapper 
+        .Card
+          .Card-header 
+            .Card-header-title.color-black Danh sách sản phẩm
+          .Card-body  
+            .CheckoutPage-list-product
+              .CheckoutPage-list-product-wrapper
+                each item in [1,2,3,4,5,6,7,8,9,10]
+                  .CheckoutPage-list-product-item.flex
+                    .CheckoutPage-list-product-item-image
+                      a(href="#") 
+                        img(src="./assets/images/image-product.png", alt="")
+
+                    .CheckoutPage-list-product-item-info
+                      .CheckoutPage-list-product-item-info-header.flex.justify-between
+                        a(href="#").CheckoutPage-list-product-item-info-title Lorem Ipsum is simply dummy text of the printing....
+                        .CheckoutPage-list-product-item-info-price 120 000 đ
+
+                      .CheckoutPage-list-product-item-info-description
+                        span Màu sắc: trắng
+                        span Kích cỡ: 4x5x3
+
+                      .CheckoutPage-list-product-item-info-actions.flex.items-center.justify-between
+                        +Button({ icon: 'trash', className: 'outline-gray only-icon' })
+                        +Amount({})
+
+              .CheckoutPage-row.flex.justify-between
+                .CheckoutPage-text Tạm tính:
+                .CheckoutPage-text.big.color-yellow-sea.nowrap 120 000 đ
+
+        .Card
+          .Card-header 
+            .Card-header-title.color-black Thông tin nhận hàng
+          .Card-body
+            .CheckoutPage-form
+              .CheckoutPage-form-row
+                .CheckoutPage-form-row-control 
+                  +Input({ placeholder: 'Họ tên người nhận hàng *' })
+              .CheckoutPage-form-row
+                .CheckoutPage-form-row-control 
+                  +Input({ placeholder: 'Số điện thoại *' })
+              .CheckoutPage-form-row
+                .CheckoutPage-form-row-control 
+                  +Input({ placeholder: 'Địa chỉ email *' })
+              .CheckoutPage-form-row-address
+                .CheckoutPage-form-row.half
+                  .CheckoutPage-form-row-control 
+                    +Select({ placeholder: 'Tỉnh / thành phố *' })
+                  .CheckoutPage-form-row-control 
+                    +Select({ placeholder: 'Quận / huyện *' })
+                  .CheckoutPage-form-row-control 
+                    +Select({ placeholder: 'Phường / xã *' })
+                  .CheckoutPage-form-row-control 
+                    +Input({ placeholder: 'Địa chỉ *' })
+
+              .CheckoutPage-form-row
+                .CheckoutPage-form-row-control 
+                  +TextArea({ placeholder: 'Ghi chú đơn hàng' })
+
+        .Card
+          .Card-header 
+            .Card-header-title.color-black Thông tin khác
+          .Card-body
+            .CheckoutPage-form-row.half
+              .CheckoutPage-form-row-control 
+                +Radio({ label: 'Giao nhanh', name: 'shippingType' })
+              .CheckoutPage-form-row-control 
+                +Radio({ label: 'Giao chậm', name: 'shippingType' })
+              .CheckoutPage-form-row-control 
+                +Radio({ label: 'Thanh toán khi nhận hàng', name: 'shippingType' })
+              .CheckoutPage-form-row-control 
+                +Radio({ label: 'Thanh toán chuyển khoản', name: 'shippingType' })
+              
+
+        .Card
+          .Card-body
+            .CheckoutPage-row.flex.justify-between
+              .CheckoutPage-text Phí vận chuyển: (miễn phí vận  chuyển cho đơn hàng trị giá trên 1 triệu đồng)
+              .CheckoutPage-text.medium.nowrap 30 000 đ
+
+            .CheckoutPage-row.flex.justify-between
+              .CheckoutPage-text Thành tiền:
+              .CheckoutPage-text.big.color-yellow-sea.nowrap 120 000 đ
+
+            .CheckoutPage-row
+              +Button({ title: 'ĐẶT MUA', className: 'primary', size: 'big' })

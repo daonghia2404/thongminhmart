@@ -1,0 +1,15 @@
+.TextArea {
+  position: relative;
+  border: 1px solid $cloud;
+
+  &-control {
+    padding: 1.3rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.6rem;
+    color: $black;
+    min-height: 10rem;
+  }
+}

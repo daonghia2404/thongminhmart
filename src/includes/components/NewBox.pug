@@ -1,0 +1,24 @@
+mixin NewBox({ image, title, link = '#', description, date, vertical })
+  .NewBox(class=`${vertical ? 'vertical' : ''}`)
+    .NewBox-image 
+      a(href=`${link}`) 
+        img(src=`${image}`, alt="")
+
+    .NewBox-info
+      a(href=`${link}`).NewBox-title= title
+      .NewBox-description= description 
+
+      if (date)
+        .NewBox-date= date
+
+      .NewBox-socials.flex.flex-wrap
+        a(href="#").NewBox-socials-item
+          img(src="./assets/icons/icon-facebook-yellow.svg", alt="")
+        a(href="#").NewBox-socials-item
+          img(src="./assets/icons/icon-twitter-yellow.svg", alt="")
+        a(href="#").NewBox-socials-item
+          img(src="./assets/icons/icon-instagram-yellow.svg", alt="")
+        a(href="#").NewBox-socials-item
+          img(src="./assets/icons/icon-google-yellow.svg", alt="")
+
+    

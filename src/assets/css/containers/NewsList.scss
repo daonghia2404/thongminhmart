@@ -1,0 +1,17 @@
+.NewsList {
+  &-list {
+    margin: 0 -0.75rem;
+
+    &-item {
+      padding: 0 0.75rem;
+      margin-bottom: 1.5rem;
+      flex: 0 0 calc(100% / 3);
+      max-width: calc(100% / 3);
+
+      @media (max-width: 991px) {
+        flex: 0 0 calc(100% / 2);
+        max-width: calc(100% / 2);
+      }
+    }
+  }
+}

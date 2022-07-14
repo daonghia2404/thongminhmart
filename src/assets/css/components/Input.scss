@@ -1,0 +1,16 @@
+.Input {
+  position: relative;
+  border: 1px solid $cloud;
+  background: $white;
+  border-radius: .5rem;
+
+  &-control {
+    padding: 1.3rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.6rem;
+    color: $black;
+  }
+}

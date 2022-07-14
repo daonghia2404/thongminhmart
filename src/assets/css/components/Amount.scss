@@ -1,0 +1,50 @@
+.Amount {
+  border: 1px solid $cloud;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: $white;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+  }
+
+  &-minus,
+  &-plus {
+    padding: 1.272rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+  }
+
+  &-control {
+    border: none;
+    background: transparent;
+    border-left: 1px solid $cloud;
+    border-right: 1px solid $cloud;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+    outline: none;
+    pointer-events: none;
+    user-select: none;
+
+    @media (max-width: 991px) {
+      max-width: 70px;
+    }
+  }
+}

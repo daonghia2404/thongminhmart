@@ -1,0 +1,17 @@
+.NewsListPage {
+  &-wrapper {
+    &-item {
+      margin-bottom: 2rem;
+
+      &:first-child {
+        flex: 1;
+        margin-right: 2rem;
+      }
+
+      &:last-child {
+        flex: 0 0 38rem;
+        max-width: 38rem;
+      }
+    }
+  }
+}

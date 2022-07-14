@@ -1,0 +1,12 @@
+mixin Breadcrumb({ data = [] })
+  .Breadcrumb
+    .container 
+      .Breadcrumb-wrapper 
+        .Breadcrumb-list.flex.flex-wrap
+          each item, index in data
+            a(href=`${item.link}`).Breadcrumb-list-item= item.title
+
+            if (index < data.length - 1)
+              .Breadcrumb-list-item.arrow 
+                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L1 13" stroke="#777777" stroke-width="1.5" stroke-linecap="round"/></svg>
+

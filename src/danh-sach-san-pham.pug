@@ -1,0 +1,13 @@
+extends includes/layouts/Guest.pug
+
+block pages
+  +Navigation({})
+  +NavigationMobile({})
+  
+  +Breadcrumb({ data: [
+    { link: 'index.html', title: 'Trang chủ' },
+    { link: 'danh-sach-san-pham.html', title: 'Danh sách sản phẩm' },
+  ] })
+  +ProductList({ title: 'Danh sách sản phẩm' })
+  
+  
