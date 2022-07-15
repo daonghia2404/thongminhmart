@@ -88,6 +88,10 @@
       max-height: 84rem;
       overflow: auto;
       margin-bottom: 4rem;
+
+      @media (max-width: 991px) {
+        max-height: 45rem;
+      }
     }
 
     &-item {
@@ -156,14 +160,14 @@
           flex: 1;
           margin-right: 1.6rem;
           @include ellipsis(2);
+          max-width: 75%;
 
-          @media (max-width: 575px) {
-            max-width: 65%;
-            font-size: 1.6rem;
+          @media (max-width: 991px) {
+            max-width: 100%;
           }
 
-          @media (max-width: 375px) {
-            margin: 0 0 1.6rem 0;
+          @media (max-width: 575px) {
+            font-size: 2rem;
           }
         }
 
@@ -172,18 +176,25 @@
           font-weight: 700;
           color: $yellow-sea;
           white-space: nowrap;
+          position: absolute;
+          top: 2rem;
+          right: 3rem;
+
+          @media (max-width: 991px) {
+            position: unset;
+          }
 
           @media (max-width: 575px) {
-            position: absolute;
-            font-size: 2.3rem;
-            top: 1rem;
-            right: 1rem;
+            font-size: 2.2rem;
           }
         }
 
         &-description {
-          @media (max-width: 575px) {
-            max-width: 65%;
+          margin-bottom: 1rem;
+          max-width: 75%;
+
+          @media (max-width: 991px) {
+            max-width: 100%;
           }
 
           span {
@@ -192,7 +203,7 @@
             color: $boulder;
 
             @media (max-width: 575px) {
-              font-size: 1.6rem;
+              font-size: 1.8rem;
             }
           }
         }
@@ -207,10 +218,6 @@
             .Amount {
               margin-right: 1.6rem;
             }
-          }
-
-          @media (max-width: 575px) {
-            max-width: 65%;
           }
         }
       }

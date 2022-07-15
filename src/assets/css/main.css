@@ -1204,9 +1204,14 @@ ul {
       .ProductBox-title {
         font-size: 2.3rem;
         height: 5.5rem; } }
+    @media (max-width: 375px) {
+      .ProductBox-title {
+        font-size: 2rem;
+        height: 5rem; } }
   @media (max-width: 575px) {
     .ProductBox-price {
       display: flex;
+      align-items: center;
       justify-content: space-between; } }
   .ProductBox-price span {
     color: #FBB508;
@@ -1214,6 +1219,9 @@ ul {
     @media (max-width: 575px) {
       .ProductBox-price span {
         font-size: 2.3rem; } }
+    @media (max-width: 375px) {
+      .ProductBox-price span {
+        font-size: 2rem; } }
   .ProductBox-price del {
     font-size: 1.6rem;
     margin-right: 1.8rem;
@@ -1568,7 +1576,7 @@ ul {
   position: fixed;
   z-index: 3;
   bottom: 10rem;
-  right: 1rem; }
+  right: 2rem; }
   @media (max-width: 991px) {
     .ButtonsCta {
       bottom: 16rem; } }
@@ -2521,6 +2529,9 @@ ul {
   max-height: 84rem;
   overflow: auto;
   margin-bottom: 4rem; }
+  @media (max-width: 991px) {
+    .CheckoutPage-list-product-wrapper {
+      max-height: 45rem; } }
 
 .CheckoutPage-list-product-item {
   border: 1px solid #CCCBCA;
@@ -2580,35 +2591,41 @@ ul {
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical; }
+      -webkit-box-orient: vertical;
+      max-width: 75%; }
+      @media (max-width: 991px) {
+        .CheckoutPage-list-product-item-info-title {
+          max-width: 100%; } }
       @media (max-width: 575px) {
         .CheckoutPage-list-product-item-info-title {
-          max-width: 65%;
-          font-size: 1.6rem; } }
-      @media (max-width: 375px) {
-        .CheckoutPage-list-product-item-info-title {
-          margin: 0 0 1.6rem 0; } }
+          font-size: 2rem; } }
     .CheckoutPage-list-product-item-info-price {
       font-size: 2.8rem;
       font-weight: 700;
       color: #FBB508;
-      white-space: nowrap; }
+      white-space: nowrap;
+      position: absolute;
+      top: 2rem;
+      right: 3rem; }
+      @media (max-width: 991px) {
+        .CheckoutPage-list-product-item-info-price {
+          position: unset; } }
       @media (max-width: 575px) {
         .CheckoutPage-list-product-item-info-price {
-          position: absolute;
-          font-size: 2.3rem;
-          top: 1rem;
-          right: 1rem; } }
-    @media (max-width: 575px) {
-      .CheckoutPage-list-product-item-info-description {
-        max-width: 65%; } }
-    .CheckoutPage-list-product-item-info-description span {
-      font-size: 1.8rem;
-      margin-right: 1.2rem;
-      color: #777; }
-      @media (max-width: 575px) {
-        .CheckoutPage-list-product-item-info-description span {
-          font-size: 1.6rem; } }
+          font-size: 2.2rem; } }
+    .CheckoutPage-list-product-item-info-description {
+      margin-bottom: 1rem;
+      max-width: 75%; }
+      @media (max-width: 991px) {
+        .CheckoutPage-list-product-item-info-description {
+          max-width: 100%; } }
+      .CheckoutPage-list-product-item-info-description span {
+        font-size: 1.8rem;
+        margin-right: 1.2rem;
+        color: #777; }
+        @media (max-width: 575px) {
+          .CheckoutPage-list-product-item-info-description span {
+            font-size: 1.8rem; } }
     .CheckoutPage-list-product-item-info-actions {
       margin-top: 4.5rem; }
       @media (max-width: 991px) {
@@ -2617,9 +2634,6 @@ ul {
           flex-direction: row-reverse; }
           .CheckoutPage-list-product-item-info-actions .Amount {
             margin-right: 1.6rem; } }
-      @media (max-width: 575px) {
-        .CheckoutPage-list-product-item-info-actions {
-          max-width: 65%; } }
   .CheckoutPage-list-product-item:not(:last-child) {
     margin-bottom: 2rem; }
     @media (max-width: 991px) {
