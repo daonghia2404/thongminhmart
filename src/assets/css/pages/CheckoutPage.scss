@@ -101,7 +101,6 @@
       @media (max-width: 991px) {
         padding: 1rem;
         border-bottom: none;
-        align-items: flex-start;
 
         &:last-child {
           border-bottom: 1px solid $cloud;
@@ -114,6 +113,8 @@
         border-right: 1px solid $cloud;
         display: flex;
         align-items: center;
+        background: $concrete;
+
 
         @media (max-width: 991px) {
           border-right: 0;
@@ -125,7 +126,6 @@
         }
 
         a {
-          background: $concrete;
           height: 19rem;
           padding: 1rem;
 
