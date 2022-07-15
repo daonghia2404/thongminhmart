@@ -8,6 +8,10 @@
     bottom: 16rem;
   }
 
+  @media (max-width: 575px) {
+    bottom: 18rem;
+  }
+
   &-item {
     position: relative;
     margin-bottom: 1rem;

@@ -1,5 +1,5 @@
 .Breadcrumb {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 
   &-list {
     &-item {
@@ -7,6 +7,10 @@
       font-size: 1.6rem;
       color: $boulder;
       transition: $common-transition;
+
+      @media (max-width: 575px) {
+        font-size: 1.8rem;
+      }
 
       &.active,
       &:hover {
@@ -17,6 +21,11 @@
         margin: 0 .4rem;
         width: .6rem;
         height: 1.2rem;
+
+        @media (max-width: 575px) {
+          width: 1.2rem;
+          height: 1.2rem;
+        }
 
         svg {
           width: 100%;

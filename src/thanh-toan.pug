@@ -43,23 +43,44 @@ block pages
             .CheckoutPage-form
               .CheckoutPage-form-row
                 .CheckoutPage-form-row-control 
-                  +Input({ placeholder: 'Họ tên người nhận hàng *' })
+                  +Input({ placeholder: 'Họ tên người nhận hàng', require: true })
               .CheckoutPage-form-row
                 .CheckoutPage-form-row-control 
-                  +Input({ placeholder: 'Số điện thoại *' })
+                  +Input({ placeholder: 'Số điện thoại', require: true })
               .CheckoutPage-form-row
                 .CheckoutPage-form-row-control 
-                  +Input({ placeholder: 'Địa chỉ email *' })
+                  +Input({ placeholder: 'Địa chỉ email', require: true })
               .CheckoutPage-form-row-address
                 .CheckoutPage-form-row.half
                   .CheckoutPage-form-row-control 
-                    +Select({ placeholder: 'Tỉnh / thành phố *' })
+                    +Select({
+                      placeholder: 'Tỉnh / thành phố',
+                      require: true,
+                      options: [
+                        { value: 'hanoi', label: 'Hà Nội' },
+                        { value: 'hochiminh', label: 'Hồ Chí Minh' },
+                      ],
+                    })
                   .CheckoutPage-form-row-control 
-                    +Select({ placeholder: 'Quận / huyện *' })
+                    +Select({
+                      placeholder: 'Quận / huyện',
+                      require: true,
+                      options: [
+                        { value: 'haibatrung', label: 'Hai Bà Trưng' },
+                        { value: 'dongda', label: 'Đống Đa' },
+                      ],
+                    })
                   .CheckoutPage-form-row-control 
-                    +Select({ placeholder: 'Phường / xã *' })
+                    +Select({
+                      placeholder: 'Phường / xã',
+                      require: true,
+                      options: [
+                        { value: 'thinhquang', label: 'Thịnh Quang' },
+                        { value: 'bode', label: 'Bồ Đề' },
+                      ],
+                    })
                   .CheckoutPage-form-row-control 
-                    +Input({ placeholder: 'Địa chỉ *' })
+                    +Input({ placeholder: 'Địa chỉ', require: true })
 
               .CheckoutPage-form-row
                 .CheckoutPage-form-row-control 
@@ -84,14 +105,14 @@ block pages
             .Card-header-title.color-black Thông tin chuyển khoản
           .Card-body
             .CheckoutPage-row.flex.justify-between.items-center
-              .CheckoutPage-text Tên tài khoản
-              .CheckoutPage-text.medium.nowrap CÔNG TY DỊCH VỤ VÀ CỔ PHẦN THONGMINHMART
+              .CheckoutPage-text.nowrap Tên tài khoản
+              .CheckoutPage-text.medium.text-right CÔNG TY DỊCH VỤ VÀ CỔ PHẦN THONGMINHMART
             .CheckoutPage-row.flex.justify-between.items-center
-              .CheckoutPage-text Số tài khoản
-              .CheckoutPage-text.medium.nowrap 1010101010
+              .CheckoutPage-text.nowrap Số tài khoản
+              .CheckoutPage-text.medium.nowrap.text-right 1010101010
             .CheckoutPage-row.flex.justify-between.items-center
-              .CheckoutPage-text Ngân hàng
-              .CheckoutPage-text.medium.nowrap Vietcombank
+              .CheckoutPage-text.nowrap Ngân hàng
+              .CheckoutPage-text.medium.nowrap.text-right Vietcombank
               
 
         .Card

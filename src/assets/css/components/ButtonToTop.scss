@@ -17,6 +17,10 @@
     bottom: 10rem;
   }
 
+  @media (max-width: 575px) {
+    bottom: 12rem;
+  }
+
   &:hover {
     background: $yellow-sea;
     border-color: $yellow-sea;

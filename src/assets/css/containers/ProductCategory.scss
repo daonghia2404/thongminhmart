@@ -35,18 +35,23 @@
       }
 
       &-image {
-        background: $alto;
-        border-radius: .5rem;
-        overflow: hidden;
-
         img {
           border-radius: .5rem;
         }
 
         a {
           width: 100%;
+          background: $alto;
           height: 17rem;
+          border-radius: .5rem;
+          overflow: hidden;
+          margin: auto;
           @include centerScaleImage;
+
+          @media (max-width: 575px) {
+            width: 8.5rem;
+            height: 8.5rem;
+          }
         }
       }
 
@@ -63,6 +68,11 @@
         text-transform: uppercase;
         z-index: 2;
         @include ellipsis(2);
+
+        @media (max-width: 575px) {
+          font-size: 1.7rem;
+          padding: 0 .2rem;
+        }
 
         @media (max-width: 991px) {
           position: unset;

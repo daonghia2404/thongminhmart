@@ -1,3 +1,9 @@
-mixin Input({ className = '', type = 'text', size = 'middle', placeholder = '' })
+mixin Input({ className = '', type = 'text', size = 'middle', placeholder = '', require })
   .Input(class=`${className} ${size}`)
-    input(type=`${type}` placeholder=`${placeholder}`).Input-control
+    input(type=`${type}`).Input-control
+
+    if (placeholder)
+      .Input-placeholder
+        = placeholder
+        if (require)
+          span *

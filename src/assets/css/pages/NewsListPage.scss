@@ -12,6 +12,12 @@
         flex: 0 0 38rem;
         max-width: 38rem;
       }
+
+      @media (max-width: 991px) {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 2.5rem 0 !important;
+      }
     }
   }
 }

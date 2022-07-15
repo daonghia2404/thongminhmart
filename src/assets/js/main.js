@@ -5,6 +5,7 @@ window.onload = () => {
   Collapse.init();
   BankingInfo.init();
   ProductCategoryDrawer.init();
+  PlaceholderCustom.init();
 };
 
 const loading = {
@@ -204,7 +205,7 @@ const ProductBox = {
         if (!video.src) {
           video.addEventListener("loadeddata", () => {
             video.classList.add("loaded");
-            loading.classList.add('loaded')
+            loading.classList.add("loaded");
           });
           video.src = srcVideo;
         }
@@ -340,5 +341,29 @@ const ProductCategoryDrawer = {
         main.classList.remove("active");
       });
     }
+  },
+};
+
+const PlaceholderCustom = {
+  init: function () {
+    this.config();
+  },
+  config: function () {
+    const Inputs = document.querySelectorAll(".Input");
+    const Selects = document.querySelectorAll(".Select");
+
+    const configPlaceholder = (elm, key, tag, event) => {
+      const control = elm.querySelector(tag);
+      const placeholder = elm.querySelector(`.${key}-placeholder`);
+
+      control.addEventListener(event, (e) => {
+        const { value } = e.target;
+        if (value) placeholder.style.opacity = 0;
+        else placeholder.style.opacity = 1;
+      });
+    };
+
+    Inputs.forEach((item) => configPlaceholder(item, 'Input', 'input', 'input'));
+    Selects.forEach((item) => configPlaceholder(item, 'Select', 'select', 'change'));
   },
 };

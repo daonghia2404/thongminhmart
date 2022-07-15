@@ -5,12 +5,28 @@
   border-radius: .5rem;
 
   &-control {
-    padding: 1.3rem;
+    padding: 2rem 1.3rem;
     width: 100%;
     border: none;
     outline: none;
     background: transparent;
     font-size: 1.6rem;
     color: $black;
+  }
+
+  &-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 1.3rem;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    color: $scorpion;
+    pointer-events: none;
+    background: $white;
+
+    span {
+      color: $red;
+      margin-left: .4rem;
+    }
   }
 }

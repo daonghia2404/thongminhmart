@@ -1,8 +1,18 @@
 .Pagination {
+  @media (max-width: 575px) {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
   &-total {
     font-size: 1.6rem;
     font-weight: 500;
     margin-right: 1.5rem;
+
+    @media (max-width: 575px) {
+      margin: 0 0 2rem 0;
+    }
   }
 
   &-control {

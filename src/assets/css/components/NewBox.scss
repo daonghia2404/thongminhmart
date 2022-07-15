@@ -3,6 +3,10 @@
     a {
       height: 38.5rem;
       @include centerScaleImage;
+
+      @media (max-width: 575px) {
+        height: 30rem;
+      }
     }
   }
 
@@ -19,6 +23,11 @@
     margin-bottom: 1rem;
     font-weight: 600;
     @include ellipsis(2);
+
+    @media (max-width: 575px) {
+      font-size: 2.3rem;
+      height: 5.5rem;
+    }
   }
 
   &-description {
@@ -28,6 +37,11 @@
     line-height: 1.5;
     margin-bottom: 2rem;
     @include ellipsis(3);
+
+    @media (max-width: 575px) {
+      font-size: 1.8rem;
+      height: 8rem;
+    }
   }
 
   &-socials {
@@ -37,6 +51,11 @@
       flex: 0 0 1.6rem;
       max-width: 1.6rem;
       margin: 0 .8rem .8rem 0;
+
+      @media (max-width: 575px) {
+        flex: 0 0 2.3rem;
+        max-width: 2.3rem;
+      }
 
       img {
         width: 100%;
@@ -48,6 +67,10 @@
     text-align: right;
     font-size: 1.4rem;
     color: $boulder;
+
+    @media (max-width: 575px) {
+      font-size: 1.8rem;
+    }
   }
 
 
@@ -66,12 +89,16 @@
       }
 
       &-image {
-        flex: 0 0 7.8rem;
-        max-width: 7.8rem;
         margin-right: .8rem;
 
         a {
+          width: 7.8rem;
           height: 7.8rem;
+
+          @media (max-width: 575px) {
+            width: 10rem;
+            height: 10rem;
+          }
         }
       }
 
@@ -79,6 +106,10 @@
         font-size: 1.6rem;
         margin-bottom: .2rem;
         height: auto;
+
+        @media (max-width: 575px) {
+          font-size: 2.3rem;
+        }
       }
 
       &-description {
@@ -89,7 +120,7 @@
 
       &-socials {
         position: absolute;
-        bottom: 1.5rem;
+        bottom: .5rem;
         left: 0;
       }
     }

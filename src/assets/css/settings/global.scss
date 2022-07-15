@@ -20,17 +20,13 @@ html {
   @media (max-width: 991px) {
     font-size: 7px;
   }
-
-  @media (max-width: 575px) {
-    font-size: 6px;
-  }
 }
 
 body {
   background: $wild-sand;
 
   @media (max-width: 991px) {
-    padding-bottom: 8rem;
+    padding-bottom: 10rem;
   }
 }
 
@@ -43,6 +39,10 @@ body {
 
 ul {
   list-style: none;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-center {
@@ -106,6 +106,10 @@ ul {
     color: $mine-shaft;
     margin-bottom: 2.4rem;
     text-align: justify;
+
+    @media (max-width: 575px) {
+      font-size: 2rem;
+    }
   }
 
   a {

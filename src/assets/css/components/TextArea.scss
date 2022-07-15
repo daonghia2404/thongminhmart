@@ -1,9 +1,10 @@
 .TextArea {
   position: relative;
   border: 1px solid $cloud;
+  border-radius: .5rem;
 
   &-control {
-    padding: 1.3rem;
+    padding: 2rem 1.3rem;
     width: 100%;
     border: none;
     outline: none;
