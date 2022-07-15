@@ -58,6 +58,10 @@
       padding: 1.5rem;
       height: 30.4rem;
       @include centerOriginImage;
+
+      @media (max-width: 991px) {
+        height: 41.5vw;
+      }
     }
   }
 
