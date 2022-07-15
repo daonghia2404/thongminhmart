@@ -117,7 +117,7 @@ const OwlCarousel = {
           items: 3,
           slideBy: 1,
         },
-        575: {
+        375: {
           items: 4,
           slideBy: 1,
         },
@@ -230,9 +230,11 @@ const ProductBox = {
     );
     if (video && playBtn) {
       video.addEventListener("loadeddata", () => {
-        video.classList.add("loaded");
-        playBtn.classList.remove("active");
-        video.play();
+        setTimeout(() => {
+          video.classList.add("loaded");
+          playBtn.classList.remove("active");
+          video.play();
+        }, 1000);
       });
 
       video.addEventListener("click", () => {
@@ -243,6 +245,11 @@ const ProductBox = {
           video.pause();
           playBtn.classList.add("active");
         }
+      });
+
+      playBtn.addEventListener("click", () => {
+        video.play();
+        playBtn.classList.remove("active");
       });
     }
   },
