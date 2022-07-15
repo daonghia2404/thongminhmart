@@ -10,6 +10,32 @@
     pointer-events: none;
     display: none;
 
+    &-loading {
+      pointer-events: none;
+      @include fullAbsolute;
+      z-index: 2;
+      background: rgba($black, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: $common-transition;
+
+      &.loaded {
+        display: none;
+      }
+
+      &.active {
+        opacity: 1;
+      }
+
+      img {
+        width: 5rem;
+        height: 5rem;
+      }
+
+    }
+
     &.loaded {
       display: block;
     }

@@ -37,10 +37,10 @@ const OwlCarousel = {
       lazyLoad: true,
       dots: false,
       nav: false,
-      navText: [
-        '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
-        '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
-      ],
+      // navText: [
+      //   '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
+      //   '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
+      // ],
       margin: 0,
     });
   },
@@ -60,10 +60,10 @@ const OwlCarousel = {
       lazyLoad: true,
       dots: false,
       nav: false,
-      navText: [
-        '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
-        '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
-      ],
+      // navText: [
+      //   '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
+      //   '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
+      // ],
       margin: 0,
     });
   },
@@ -103,10 +103,10 @@ const OwlCarousel = {
       lazyLoad: true,
       dots: false,
       nav: false,
-      navText: [
-        '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
-        '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
-      ],
+      // navText: [
+      //   '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
+      //   '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
+      // ],
       margin: 30,
     });
   },
@@ -130,10 +130,10 @@ const OwlCarousel = {
       lazyLoad: true,
       dots: false,
       nav: false,
-      navText: [
-        '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
-        '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
-      ],
+      // navText: [
+      //   '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
+      //   '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
+      // ],
       margin: 20,
     });
   },
@@ -197,21 +197,25 @@ const ProductBox = {
     const products = document.querySelectorAll(".ProductBox");
     products.forEach((item) => {
       const video = item.querySelector(".ProductBox-video");
+      const loading = item.querySelector(".ProductBox-video-loading");
       const srcVideo = video.dataset.src;
 
       const startVideo = () => {
         if (!video.src) {
           video.addEventListener("loadeddata", () => {
             video.classList.add("loaded");
+            loading.classList.add('loaded')
           });
           video.src = srcVideo;
         }
 
+        loading.classList.add("active");
         video.classList.add("active");
         video.play();
       };
 
       const endVideo = () => {
+        loading.classList.remove("active");
         video.classList.remove("active");
         video.pause();
         video.currentTime = 0;

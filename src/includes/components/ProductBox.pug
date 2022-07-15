@@ -6,6 +6,9 @@ mixin ProductBox({ link = '#', image, video, title, price, oldPrice })
 
         video(data-src=`${video}` muted loop).ProductBox-video
 
+        .ProductBox-video-loading   
+          img(src="./assets/icons/icon-spinner.svg", alt="")
+
     .ProductBox-info
       a(href=`${link}`).ProductBox-title= title
 
