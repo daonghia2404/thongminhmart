@@ -1,12 +1,6 @@
 .ProductBox {
   border: 1px solid $alto;
 
-  &:hover {
-    .ProductBox-title {
-      color: $yellow-sea;
-    }
-  }
-
   &-video {
     @include fullAbsolute;
     object-fit: cover;
@@ -48,6 +42,10 @@
     color: $black;
     transition: $common-transition;
     @include ellipsis(2);
+
+    &:hover {
+      color: $yellow-sea;
+    }
   }
 
   &-price {
