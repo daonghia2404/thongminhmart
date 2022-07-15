@@ -1892,7 +1892,6 @@ ul {
       position: absolute;
       text-align: center;
       width: 100%;
-      padding: 0 0.5rem;
       line-height: 1.5;
       bottom: 1rem;
       left: 0;
@@ -1907,8 +1906,7 @@ ul {
       -webkit-box-orient: vertical; }
       @media (max-width: 575px) {
         .ProductCategory-list-item-title {
-          font-size: 1.7rem;
-          padding: 0 .2rem; } }
+          font-size: 1.6rem; } }
       @media (max-width: 991px) {
         .ProductCategory-list-item-title {
           position: unset;
@@ -2522,7 +2520,8 @@ ul {
   margin-bottom: 4rem; }
 
 .CheckoutPage-list-product-item {
-  border: 1px solid #CCCBCA; }
+  border: 1px solid #CCCBCA;
+  position: relative; }
   @media (max-width: 991px) {
     .CheckoutPage-list-product-item {
       padding: 1rem;
@@ -2541,8 +2540,8 @@ ul {
         border-right: 0; } }
     @media (max-width: 575px) {
       .CheckoutPage-list-product-item-image {
-        flex: 0 0 16rem;
-        max-width: 16rem; } }
+        flex: 0 0 12.5rem;
+        max-width: 12.5rem; } }
     .CheckoutPage-list-product-item-image a {
       background: #F3F3F3;
       height: 19rem;
@@ -2550,7 +2549,7 @@ ul {
       display: flex; }
       @media (max-width: 575px) {
         .CheckoutPage-list-product-item-image a {
-          height: 16rem; } }
+          height: 12.5rem; } }
       .CheckoutPage-list-product-item-image a img {
         max-width: 100%;
         max-height: 100%;
@@ -2581,7 +2580,7 @@ ul {
       -webkit-box-orient: vertical; }
       @media (max-width: 575px) {
         .CheckoutPage-list-product-item-info-title {
-          max-width: 26rem;
+          max-width: 65%;
           font-size: 1.6rem; } }
       @media (max-width: 375px) {
         .CheckoutPage-list-product-item-info-title {
@@ -2593,10 +2592,13 @@ ul {
       white-space: nowrap; }
       @media (max-width: 575px) {
         .CheckoutPage-list-product-item-info-price {
-          font-size: 2.3rem; } }
+          position: absolute;
+          font-size: 2.3rem;
+          top: 1rem;
+          right: 1rem; } }
     @media (max-width: 575px) {
       .CheckoutPage-list-product-item-info-description {
-        max-width: 26rem; } }
+        max-width: 65%; } }
     .CheckoutPage-list-product-item-info-description span {
       font-size: 1.8rem;
       margin-right: 1.2rem;
@@ -2614,7 +2616,7 @@ ul {
             margin-right: 1.6rem; } }
       @media (max-width: 575px) {
         .CheckoutPage-list-product-item-info-actions {
-          max-width: 26rem; } }
+          max-width: 65%; } }
   .CheckoutPage-list-product-item:not(:last-child) {
     margin-bottom: 2rem; }
     @media (max-width: 991px) {

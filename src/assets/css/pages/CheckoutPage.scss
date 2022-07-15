@@ -92,6 +92,7 @@
 
     &-item {
       border: 1px solid $cloud;
+      position: relative;
 
       @media (max-width: 991px) {
         padding: 1rem;
@@ -115,8 +116,8 @@
         }
 
         @media (max-width: 575px) {
-          flex: 0 0 16rem;
-          max-width: 16rem;
+          flex: 0 0 12.5rem;
+          max-width: 12.5rem;
         }
 
         a {
@@ -125,7 +126,7 @@
           padding: 1rem;
 
           @media (max-width: 575px) {
-            height: 16rem;
+            height: 12.5rem;
           }
 
           @include centerOriginImage;
@@ -157,7 +158,7 @@
           @include ellipsis(2);
 
           @media (max-width: 575px) {
-            max-width: 26rem;
+            max-width: 65%;
             font-size: 1.6rem;
           }
 
@@ -173,13 +174,16 @@
           white-space: nowrap;
 
           @media (max-width: 575px) {
+            position: absolute;
             font-size: 2.3rem;
+            top: 1rem;
+            right: 1rem;
           }
         }
 
         &-description {
           @media (max-width: 575px) {
-            max-width: 26rem;
+            max-width: 65%;
           }
 
           span {
@@ -206,7 +210,7 @@
           }
 
           @media (max-width: 575px) {
-            max-width: 26rem;
+            max-width: 65%;
           }
         }
       }

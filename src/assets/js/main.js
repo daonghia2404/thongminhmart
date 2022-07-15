@@ -135,7 +135,7 @@ const OwlCarousel = {
       //   '<img src="./assets/icons/icon-arrow-left-white.svg" alt="" />',
       //   '<img src="./assets/icons/icon-arrow-right-white.svg" alt="" />',
       // ],
-      margin: 20,
+      margin: 5,
     });
   },
 };
