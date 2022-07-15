@@ -229,13 +229,18 @@ const ProductBox = {
       ".ProductDetailPage-detail-image-play"
     );
     if (video && playBtn) {
-      video.addEventListener("loadeddata", () => {
+      video.addEventListener("loadedmetadata", () => {
         setTimeout(() => {
           video.classList.add("loaded");
           playBtn.classList.remove("active");
           video.play();
         }, 1000);
       });
+
+      if (/iPad|iPhone|iPod|Safari/.test(navigator.userAgent)) {
+        video.classList.add("loaded");
+        playBtn.classList.remove("active");
+      }
 
       video.addEventListener("click", () => {
         if (video.paused) {
@@ -248,6 +253,7 @@ const ProductBox = {
       });
 
       playBtn.addEventListener("click", () => {
+        video.classList.add("loaded");
         video.play();
         playBtn.classList.remove("active");
       });

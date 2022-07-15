@@ -151,7 +151,9 @@
             <div class="Card-body">
               <div class="ProductDetailPage-detail-wrapper flex flex-wrap">
                 <div class="ProductDetailPage-detail-image"> <img src="./assets/images/image-product.png" alt="">
-                  <video class="ProductDetailPage-detail-video" src="./assets/videos/video-product-1.mp4" preload="auto" defaultmuted playsinline muted loop></video>
+                  <video class="ProductDetailPage-detail-video" defaultmuted autoplay loop muted playsinline preload="metadata">
+                    <source src="./assets/videos/video-product-1.mp4" type="video/mp4">
+                  </video>
                   <div class="ProductDetailPage-detail-image-play active"><img src="./assets/icons/icon-play.svg" alt=""></div>
                 </div>
                 <div class="ProductDetailPage-detail-info">
