@@ -196,12 +196,48 @@ const ProductBox = {
   },
   configProductBoxVideo: function () {
     const products = document.querySelectorAll(".ProductBox");
+
     products.forEach((item) => {
-      const video = item.querySelector(".ProductBox-video");
+      const video = item.querySelector(".ProductBox-video.desktop");
       const loading = item.querySelector(".ProductBox-video-loading");
       const srcVideo = video.dataset.src;
 
+      const playVideo = item.querySelector(".ProductBox-video-play");
+
       const startVideo = () => {
+        const isDesktop = window.innerWidth > 991;
+
+        if (isDesktop) {
+          if (!video.src) {
+            video.addEventListener("loadeddata", () => {
+              video.classList.add("loaded");
+              loading.classList.add("loaded");
+            });
+            video.src = srcVideo;
+          }
+
+          loading.classList.add("active");
+          video.classList.add("active");
+          video.play();
+        }
+      };
+
+      const endVideo = () => {
+        const isDesktop = window.innerWidth > 991;
+        if (isDesktop) {
+          loading.classList.remove("active");
+          video.classList.remove("active");
+          video.pause();
+          video.currentTime = 0;
+        }
+      };
+
+      item.addEventListener("mousemove", startVideo);
+      item.addEventListener("touchstart", startVideo);
+      item.addEventListener("mouseleave", endVideo);
+      item.addEventListener("touchend", endVideo);
+
+      playVideo.addEventListener("click", () => {
         if (!video.src) {
           video.addEventListener("loadeddata", () => {
             video.classList.add("loaded");
@@ -210,22 +246,17 @@ const ProductBox = {
           video.src = srcVideo;
         }
 
-        loading.classList.add("active");
-        video.classList.add("active");
-        video.play();
-      };
+        loading.classList.add("active-mobile");
+        video.classList.add("active-mobile");
 
-      const endVideo = () => {
-        loading.classList.remove("active");
-        video.classList.remove("active");
-        video.pause();
-        video.currentTime = 0;
-      };
-
-      item.addEventListener("mousemove", startVideo);
-      item.addEventListener("touchstart", startVideo);
-      item.addEventListener("mouseleave", endVideo);
-      item.addEventListener("touchend", endVideo);
+        if (video.paused) {
+          video.play();
+          playVideo.classList.remove("active");
+        } else {
+          video.pause();
+          playVideo.classList.add("active");
+        }
+      });
     });
   },
   configProductDetailVideo: function () {
@@ -247,21 +278,21 @@ const ProductBox = {
         playBtn.classList.remove("active");
       }
 
-      video.addEventListener("click", () => {
-        if (video.paused) {
-          video.play();
-          playBtn.classList.remove("active");
-        } else {
-          video.pause();
-          playBtn.classList.add("active");
-        }
-      });
+      // video.addEventListener("click", () => {
+      //   if (video.paused) {
+      //     video.play();
+      //     playBtn.classList.remove("active");
+      //   } else {
+      //     video.pause();
+      //     playBtn.classList.add("active");
+      //   }
+      // });
 
-      playBtn.addEventListener("click", () => {
-        video.classList.add("loaded");
-        video.play();
-        playBtn.classList.remove("active");
-      });
+      // playBtn.addEventListener("click", () => {
+      //   video.classList.add("loaded");
+      //   video.play();
+      //   playBtn.classList.remove("active");
+      // });
     }
   },
 };
@@ -363,7 +394,11 @@ const PlaceholderCustom = {
       });
     };
 
-    Inputs.forEach((item) => configPlaceholder(item, 'Input', 'input', 'input'));
-    Selects.forEach((item) => configPlaceholder(item, 'Select', 'select', 'change'));
+    Inputs.forEach((item) =>
+      configPlaceholder(item, "Input", "input", "input")
+    );
+    Selects.forEach((item) =>
+      configPlaceholder(item, "Select", "select", "change")
+    );
   },
 };
