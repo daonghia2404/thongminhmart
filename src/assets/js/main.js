@@ -18,7 +18,7 @@ const loading = {
 const OwlCarousel = {
   init: function () {
     this.setupBannerCarousel();
-    this.setupNavigationCarousel();
+    // this.setupNavigationCarousel();
     this.setupProductCategoryCarousel();
     this.setupProductCategoryCarouselMobile();
   },
@@ -200,6 +200,7 @@ const ProductBox = {
     products.forEach((item) => {
       const video = item.querySelector(".ProductBox-video.desktop");
       const loading = item.querySelector(".ProductBox-video-loading");
+      const thumbnailVideo = item.querySelector(".ProductBox-thumbnail-video");
       const srcVideo = video.dataset.src;
 
       const playVideo = item.querySelector(".ProductBox-video-play");
@@ -237,6 +238,43 @@ const ProductBox = {
       item.addEventListener("mouseleave", endVideo);
       item.addEventListener("touchend", endVideo);
 
+      const getThumbnailImage = (seekTo = 0.0) => {
+        const videoPlayer = document.createElement("video");
+        videoPlayer.setAttribute("src", srcVideo);
+        videoPlayer.load();
+
+        videoPlayer.addEventListener("loadeddata", () => {
+          setTimeout(() => {
+            videoPlayer.currentTime = seekTo;
+          }, 1000);
+
+          videoPlayer.addEventListener("seeked", () => {
+            const videoPlayerWidth = videoPlayer.videoWidth * 0.45;
+            const videoPlayerHeight = videoPlayer.videoHeight * 0.22;
+
+            thumbnailVideo
+              .getContext("2d")
+              .drawImage(
+                videoPlayer,
+                thumbnailVideo.width / 2 - videoPlayerWidth / 2,
+                thumbnailVideo.height / 2 - videoPlayerHeight / 2,
+                videoPlayerWidth,
+                videoPlayerHeight
+              );
+
+            thumbnailVideo.canvas?.toBlob(
+              (blob) => {
+                resolve(blob);
+              },
+              "image/jpeg",
+              1
+            );
+          });
+        });
+      };
+
+      getThumbnailImage();
+
       playVideo.addEventListener("click", () => {
         if (!video.src) {
           video.addEventListener("loadeddata", () => {
@@ -252,6 +290,7 @@ const ProductBox = {
         if (video.paused) {
           video.play();
           playVideo.classList.remove("active");
+          thumbnailVideo.classList.remove("active");
         } else {
           video.pause();
           playVideo.classList.add("active");

@@ -6,15 +6,37 @@
     display: none;
   }
 
-  &-carousel {
-    max-width: 50rem;
+  .marquee-container {
+    position: relative;
+    width: 50rem;
+    height: 2rem;
+    overflow: hidden;
 
-    &-item {
-      font-size: 1.8rem;
-      font-weight: 500;
-      color: $white;
-      @include ellipsis(1);
+    .marquee {
+      top: 0;
+      transform: translateX(30%);
+      position: absolute;
+      animation: marquee 30s linear infinite;
+
+      &-item {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $white;
+        white-space: nowrap;
+        margin-right: 1rem;
+      }
     }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(30%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
   }
 
   &-list {

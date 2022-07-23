@@ -4,6 +4,8 @@ mixin ProductBox({ link = '#', image, video, title, price, oldPrice })
       .ProductBox-image-wrapper
         img(src=`${image}`, alt="")
 
+        canvas.ProductBox-thumbnail-video.active
+
         video(data-src=`${video}` muted loop).ProductBox-video.desktop
 
         .ProductBox-video-loading   

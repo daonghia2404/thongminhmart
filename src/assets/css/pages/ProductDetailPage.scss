@@ -60,15 +60,25 @@
 
       &-title {
         font-size: 2.4rem;
-        border-bottom: 1px solid $cloud;
-        padding-bottom: 1.8rem;
-        margin-bottom: 1.8rem;
+        @include ellipsis(2);
       }
 
       &-basic {
+        padding-top: 1.8rem;
+        margin-top: 1.8rem;
+        border-top: 1px solid $cloud;
+
         border-bottom: 1px solid $cloud;
         padding-bottom: 1.8rem;
         margin-bottom: 1.8rem;
+
+        &-item {
+          &:not(:last-child) {
+            border-bottom: 1px solid $cloud;
+            padding-bottom: 1.8rem;
+            margin-bottom: 1.8rem;
+          }
+        }
 
         &-price {
           span {
@@ -144,10 +154,8 @@
           }
 
           &-row {
-            margin-bottom: 2rem;
-
-            .Amount {
-              max-width: 23.5rem;
+            &:not(:last-child) {
+              margin-bottom: 2rem;
             }
 
             &-label {
@@ -164,7 +172,7 @@
           }
 
           &-carts {
-            height: 27rem;
+            height: 21rem;
             overflow: auto;
             padding: 1.6rem;
             border: 1px solid $cloud;

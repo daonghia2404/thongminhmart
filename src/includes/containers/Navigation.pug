@@ -13,10 +13,12 @@ mixin Navigation({ keyActive })
     .container
       .Navigation-wrapper.flex.items-center.justify-between 
         .Navigation-wrapper-item
-          .Navigation-carousel.owl-carousel#Navigation-carousel
-            each item in [1,2,3,4]
-              .item 
-                .Navigation-carousel-item Lorem Ipsum is simply dummy text of the printing
+          .marquee-container
+            .marquee.flex.items-center
+              each item in [1,2,3,4]
+                .item 
+                  .marquee-item= `${item}. Lorem Ipsum is simply dummy text of the printing`
+              
 
         .Navigation-wrapper-item
           .Navigation-list.flex.items-center 

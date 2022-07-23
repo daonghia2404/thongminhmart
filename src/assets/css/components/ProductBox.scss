@@ -6,6 +6,18 @@
     overflow: hidden;
   }
 
+  &-thumbnail-video {
+    @include fullAbsolute;
+    z-index: 1;
+    display: none;
+
+    @media (max-width: 991px) {
+      &.active {
+        display: block;
+      }
+    }
+  }
+
   &-video {
     @include fullAbsolute;
     object-fit: cover;
@@ -100,6 +112,12 @@
       padding: 1.5rem;
       height: 30.4rem;
       @include centerOriginImage;
+
+      &>img {
+        @media (max-width: 991px) {
+          opacity: 0;
+        }
+      }
 
       @media (max-width: 991px) {
         height: 41.5vw;
