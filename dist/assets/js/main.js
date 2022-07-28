@@ -211,7 +211,7 @@ const ProductBox = {
       video.currentTime = 0;
     };
 
-    products.forEach((item) => {
+    products.forEach((item, index) => {
       const video = item.querySelector(".ProductBox-video.desktop");
       const loading = item.querySelector(".ProductBox-video-loading");
       const thumbnailVideo = item.querySelector(".ProductBox-thumbnail-video");
@@ -233,7 +233,7 @@ const ProductBox = {
         thumbnailVideo.classList.add("active");
       };
 
-      const startVideo = () => {
+      const startNavigate = () => {
         const isMobile = window.innerWidth <= 991;
         const isVideoPlaying = !!(
           video.currentTime > 0 &&
@@ -241,14 +241,21 @@ const ProductBox = {
           !video.ended &&
           video.readyState > 2
         );
-
-        if (isMobile) {
-          products.forEach((product) => stopAllProductsVideo(product));
-        }
-
         if (isVideoPlaying && isMobile) {
           window.open(srcLink, "_self");
-        } else if (!video.src) {
+        }
+      };
+
+      const startVideo = () => {
+        const isMobile = window.innerWidth <= 991;
+
+        if (isMobile) {
+          products.forEach((product, productIdx) => {
+            if (productIdx !== index) stopAllProductsVideo(product);
+          });
+        }
+
+        if (!video.src) {
           video.addEventListener("loadeddata", () => {
             video.classList.add("loaded");
             loading.classList.add("loaded");
@@ -268,6 +275,7 @@ const ProductBox = {
         video.currentTime = 0;
       };
 
+      item.addEventListener("click", startNavigate);
       item.addEventListener("mousemove", startVideo);
       item.addEventListener("touchstart", startVideo);
       item.addEventListener("mouseleave", endVideo);
