@@ -1,3 +1,25 @@
 .Banner {
   margin-bottom: 2.5rem;
+
+  &-carousel {
+    &-item {
+      img {
+        border-radius: 5px;
+
+        &.desktop {
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+
+        &.mobile {
+          display: none;
+
+          @media (max-width: 768px) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }

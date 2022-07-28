@@ -197,6 +197,20 @@ const ProductBox = {
   configProductBoxVideo: function () {
     const products = document.querySelectorAll(".ProductBox");
 
+    const stopAllProductsVideo = (item) => {
+      const video = item.querySelector(".ProductBox-video.desktop");
+      const loading = item.querySelector(".ProductBox-video-loading");
+      const thumbnailVideo = item.querySelector(".ProductBox-thumbnail-video");
+      const playBtn = item.querySelector(".ProductBox-video-play");
+
+      loading.classList.remove("active");
+      video.classList.remove("active");
+      playBtn.classList.add("active");
+      thumbnailVideo.classList.add("active");
+      video.pause();
+      video.currentTime = 0;
+    };
+
     products.forEach((item) => {
       const video = item.querySelector(".ProductBox-video.desktop");
       const loading = item.querySelector(".ProductBox-video-loading");
@@ -220,6 +234,7 @@ const ProductBox = {
       };
 
       const startVideo = () => {
+        const isMobile = window.innerWidth <= 991;
         const isVideoPlaying = !!(
           video.currentTime > 0 &&
           !video.paused &&
@@ -227,8 +242,12 @@ const ProductBox = {
           video.readyState > 2
         );
 
-        if (isVideoPlaying && window.innerWidth <= 991) {
-          window.open(srcLink, '_self');
+        if (isMobile) {
+          products.forEach((product) => stopAllProductsVideo(product));
+        }
+
+        if (isVideoPlaying && isMobile) {
+          window.open(srcLink, "_self");
         } else if (!video.src) {
           video.addEventListener("loadeddata", () => {
             video.classList.add("loaded");
@@ -252,7 +271,6 @@ const ProductBox = {
       item.addEventListener("mousemove", startVideo);
       item.addEventListener("touchstart", startVideo);
       item.addEventListener("mouseleave", endVideo);
-      item.addEventListener("touchend", endVideo);
 
       const getThumbnailImage = (seekTo = 0.0) => {
         const videoPlayer = document.createElement("video");

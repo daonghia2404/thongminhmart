@@ -1891,6 +1891,16 @@ ul {
 
 .Banner {
   margin-bottom: 2.5rem; }
+  .Banner-carousel-item img {
+    border-radius: 5px; }
+    @media (max-width: 768px) {
+      .Banner-carousel-item img.desktop {
+        display: none; } }
+    .Banner-carousel-item img.mobile {
+      display: none; }
+      @media (max-width: 768px) {
+        .Banner-carousel-item img.mobile {
+          display: block; } }
 
 .ProductCategory {
   margin-bottom: 2.5rem; }
@@ -2220,7 +2230,11 @@ ul {
   left: 0;
   position: fixed;
   z-index: 10;
-  pointer-events: none; }
+  pointer-events: none;
+  display: none; }
+  @media (max-width: 991px) {
+    .ProductCartDrawer {
+      display: block; } }
   .ProductCartDrawer.active {
     pointer-events: unset; }
     .ProductCartDrawer.active .ProductCartDrawer-overlay {
