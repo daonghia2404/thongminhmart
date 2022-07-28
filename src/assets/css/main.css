@@ -1164,7 +1164,7 @@ ul {
       justify-content: center;
       z-index: 2;
       cursor: pointer;
-      display: none;
+      display: none !important;
       opacity: 0; }
       .ProductBox-video-play img {
         width: 6rem; }

@@ -33,7 +33,7 @@
       justify-content: center;
       z-index: 2;
       cursor: pointer;
-      display: none;
+      display: none !important;
       opacity: 0;
 
       img {

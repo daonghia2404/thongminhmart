@@ -205,7 +205,7 @@ const ProductBox = {
 
       loading.classList.remove("active");
       video.classList.remove("active");
-      playBtn.classList.add("active");
+      // playBtn.classList.add("active");
       thumbnailVideo.classList.add("active");
       video.pause();
       video.currentTime = 0;
@@ -222,14 +222,14 @@ const ProductBox = {
       const triggerClassStartVideo = () => {
         loading.classList.add("active");
         video.classList.add("active");
-        playBtn.classList.remove("active");
+        // playBtn.classList.remove("active");
         thumbnailVideo.classList.remove("active");
       };
 
       const triggerClassEndVideo = () => {
         loading.classList.remove("active");
         video.classList.remove("active");
-        playBtn.classList.add("active");
+        // playBtn.classList.add("active");
         thumbnailVideo.classList.add("active");
       };
 
