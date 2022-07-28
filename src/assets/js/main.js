@@ -202,35 +202,51 @@ const ProductBox = {
       const loading = item.querySelector(".ProductBox-video-loading");
       const thumbnailVideo = item.querySelector(".ProductBox-thumbnail-video");
       const srcVideo = video.dataset.src;
+      const srcLink = video.dataset.link;
+      const playBtn = item.querySelector(".ProductBox-video-play");
 
-      const playVideo = item.querySelector(".ProductBox-video-play");
+      const triggerClassStartVideo = () => {
+        loading.classList.add("active");
+        video.classList.add("active");
+        playBtn.classList.remove("active");
+        thumbnailVideo.classList.remove("active");
+      };
+
+      const triggerClassEndVideo = () => {
+        loading.classList.remove("active");
+        video.classList.remove("active");
+        playBtn.classList.add("active");
+        thumbnailVideo.classList.add("active");
+      };
 
       const startVideo = () => {
-        const isDesktop = window.innerWidth > 991;
+        const isVideoPlaying = !!(
+          video.currentTime > 0 &&
+          !video.paused &&
+          !video.ended &&
+          video.readyState > 2
+        );
 
-        if (isDesktop) {
-          if (!video.src) {
-            video.addEventListener("loadeddata", () => {
-              video.classList.add("loaded");
-              loading.classList.add("loaded");
-            });
-            video.src = srcVideo;
-          }
-
-          loading.classList.add("active");
-          video.classList.add("active");
+        if (isVideoPlaying && window.innerWidth <= 991) {
+          window.open(srcLink, '_self');
+        } else if (!video.src) {
+          video.addEventListener("loadeddata", () => {
+            video.classList.add("loaded");
+            loading.classList.add("loaded");
+            video.play();
+            triggerClassStartVideo();
+          });
+          video.src = srcVideo;
+        } else {
           video.play();
+          triggerClassStartVideo();
         }
       };
 
       const endVideo = () => {
-        const isDesktop = window.innerWidth > 991;
-        if (isDesktop) {
-          loading.classList.remove("active");
-          video.classList.remove("active");
-          video.pause();
-          video.currentTime = 0;
-        }
+        triggerClassEndVideo();
+        video.pause();
+        video.currentTime = 0;
       };
 
       item.addEventListener("mousemove", startVideo);
@@ -274,28 +290,6 @@ const ProductBox = {
       };
 
       getThumbnailImage();
-
-      playVideo.addEventListener("click", () => {
-        if (!video.src) {
-          video.addEventListener("loadeddata", () => {
-            video.classList.add("loaded");
-            loading.classList.add("loaded");
-          });
-          video.src = srcVideo;
-        }
-
-        loading.classList.add("active-mobile");
-        video.classList.add("active-mobile");
-
-        if (video.paused) {
-          video.play();
-          playVideo.classList.remove("active");
-          thumbnailVideo.classList.remove("active");
-        } else {
-          video.pause();
-          playVideo.classList.add("active");
-        }
-      });
     });
   },
   configProductDetailVideo: function () {

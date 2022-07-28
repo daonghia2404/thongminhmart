@@ -6,7 +6,7 @@ mixin ProductBox({ link = '#', image, video, title, price, oldPrice })
 
         canvas.ProductBox-thumbnail-video.active
 
-        video(data-src=`${video}` muted loop).ProductBox-video.desktop
+        video(data-src=`${video}` data-link=`${link}` muted loop playsinline).ProductBox-video.desktop
 
         .ProductBox-video-loading   
           img(src="./assets/icons/icon-spinner.svg", alt="")
