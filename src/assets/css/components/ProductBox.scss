@@ -22,10 +22,10 @@
     @include fullAbsolute;
     object-fit: cover;
     object-position: center;
-    transition: $common-transition;
     opacity: 0;
     pointer-events: none;
     display: none;
+    user-select: none;
 
     &-play {
       @include fullAbsolute;
@@ -35,7 +35,6 @@
       cursor: pointer;
       display: none;
       opacity: 0;
-
 
       img {
         width: 6rem;
@@ -59,7 +58,6 @@
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: $common-transition;
 
       &.loaded {
         display: none;
