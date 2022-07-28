@@ -30,6 +30,11 @@
         flex: 0 0 100%;
         max-width: 100%;
         margin-bottom: 2.5rem;
+        height: 94.1vw;
+      }
+
+      @media (max-width: 575px) {
+        height: 85.5vw;
       }
 
       &-play {

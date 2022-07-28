@@ -2379,7 +2379,11 @@ ul {
       .ProductDetailPage-detail-image {
         flex: 0 0 100%;
         max-width: 100%;
-        margin-bottom: 2.5rem; } }
+        margin-bottom: 2.5rem;
+        height: 94.1vw; } }
+    @media (max-width: 575px) {
+      .ProductDetailPage-detail-image {
+        height: 85.5vw; } }
     .ProductDetailPage-detail-image-play {
       position: absolute;
       top: 50%;
