@@ -1211,9 +1211,6 @@ ul {
         object-position: center;
         margin: auto; }
       @media (max-width: 991px) {
-        .ProductBox-image-wrapper > img {
-          opacity: 0; } }
-      @media (max-width: 991px) {
         .ProductBox-image-wrapper {
           height: 41.5vw; } }
   .ProductBox-info {

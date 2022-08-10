@@ -91,11 +91,11 @@
       height: 30.4rem;
       @include centerOriginImage;
 
-      &>img {
-        @media (max-width: 991px) {
-          opacity: 0;
-        }
-      }
+      // &>img {
+      //   @media (max-width: 991px) {
+      //     opacity: 0;
+      //   }
+      // }
 
       @media (max-width: 991px) {
         height: 41.5vw;
