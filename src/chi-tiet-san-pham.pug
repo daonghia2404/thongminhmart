@@ -32,6 +32,9 @@ block pages
 
                 .ProductDetailPage-detail-info-basic
                   .ProductDetailPage-detail-info-basic-item   
+                    .ProductDetailPage-detail-info-text MSP: 123456
+
+                  .ProductDetailPage-detail-info-basic-item   
                     .ProductDetailPage-detail-info-text Giá bán 
                     br
 
@@ -39,11 +42,8 @@ block pages
                       span 120,000 đ
                       del 190,000 đ
 
-                  .ProductDetailPage-detail-info-basic-item   
-                    .ProductDetailPage-detail-info-text MSP: 123456
-
                 .ProductDetailPage-detail-info-options.flex.flex-wrap
-                  .ProductDetailPage-detail-info-options-item.flex.flex-col.justify-between
+                  .ProductDetailPage-detail-info-options-item
                     .ProductDetailPage-detail-info-options-item-title
 
                     .ProductDetailPage-detail-info-options-item-row.flex.items-center 
@@ -78,7 +78,7 @@ block pages
                     .ProductDetailPage-detail-info-options-item-carts
                       each item in [1,2,3,4,5,6,7,8]
                         .ProductDetailPage-detail-info-options-item-carts-item.flex.items-center
-                          .ProductDetailPage-detail-info-options-item-carts-item-title 1 sản phẩm - Màu sắc: Trắng - Kích cỡ: 5x7x3
+                          .ProductDetailPage-detail-info-options-item-carts-item-title 1SP - Màu: Trắng - KT: 5x7x3
                           .ProductDetailPage-detail-info-options-item-carts-item-remove 
                             img(src="./assets/icons/icon-x-yellow.svg", alt="")
 

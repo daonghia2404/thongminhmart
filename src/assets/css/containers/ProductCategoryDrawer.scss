@@ -63,8 +63,9 @@
         height: 11rem;
         margin: 0 auto .6rem;
         border-radius: .5rem;
-        background: $alto;
-        @include centerScaleImage;
+        background: $white;
+        border: 1px solid $alto;
+        @include centerOriginImage;
       }
 
       &-title {
@@ -72,6 +73,7 @@
         font-size: 1.8rem;
         color: $black;
         transition: $common-transition;
+        text-align: center;
         @include ellipsis(1);
       }
     }

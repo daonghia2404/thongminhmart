@@ -41,12 +41,13 @@
 
         a {
           width: 100%;
-          background: $alto;
+          background: $white;
+          border: 1px solid $alto;
           height: 17rem;
           border-radius: .5rem;
           overflow: hidden;
           margin: auto;
-          @include centerScaleImage;
+          @include centerOriginImage;
 
           @media (max-width: 575px) {
             width: 8.5rem;

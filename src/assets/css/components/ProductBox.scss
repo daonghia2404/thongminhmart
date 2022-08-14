@@ -88,7 +88,7 @@
     &-wrapper {
       position: relative;
       padding: 1.5rem;
-      height: 30.4rem;
+      height: 25.4rem;
       @include centerOriginImage;
 
       // &>img {
@@ -96,6 +96,10 @@
       //     opacity: 0;
       //   }
       // }
+
+      @media (max-width: 1200px) {
+        height: 30.4rem;
+      }
 
       @media (max-width: 991px) {
         height: 41.5vw;
@@ -111,7 +115,7 @@
     display: block;
     font-size: 2rem;
     margin-bottom: 1.6rem;
-    height: 5rem;
+    height: 4.6rem;
     color: $black;
     transition: $common-transition;
     @include ellipsis(2);
@@ -122,12 +126,12 @@
 
     @media (max-width: 575px) {
       font-size: 2.3rem;
-      height: 5.5rem;
+      height: 5.3rem;
     }
 
     @media (max-width: 375px) {
       font-size: 2rem;
-      height: 5rem;
+      height: 4.6rem;
     }
   }
 
