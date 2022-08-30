@@ -396,7 +396,7 @@ const BankingInfo = {
   toggle: function () {
     const bankingInfo = document.querySelector(".js-banking-info");
     const bankingInfoCheck = document.querySelectorAll(
-      '.js-banking-info-check input[type="radio"]'
+      '.js-banking-info-check input[type="radio"][name="paymentType"]'
     );
 
     if (bankingInfo) {
